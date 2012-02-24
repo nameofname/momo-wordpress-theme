@@ -308,3 +308,13 @@ add_filter( 'attachment_link', 'Momofuku_enhanced_image_navigation' );
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Momofuku.
  */
+
+function momo_home_js() {
+    wp_enqueue_script('jquery_theme', get_template_directory_uri() . '/js/jquery-1.7.1.min.js');            
+    wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js');            
+}    
+ 
+add_action('wp_enqueue_scripts', 'momo_home_js'); // For use on the Front end (ie. Theme)
+
+
+?>

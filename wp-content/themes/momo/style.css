@@ -23,6 +23,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #primary {
 	float: left;
 	width: 740px;
+        position: relative; 
 }
 #content {
     
@@ -394,4 +395,25 @@ article.comment {
 
 #colophon {
 	padding: 1em 0 0;
+}
+
+#home {
+	float: left;
+	width: 740px;
+        position: relative; 
+}
+
+#home .entry-content {
+    height: 100px; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.expand {
+    width: 15px; 
+    height: 15px; 
+    background-color: red; 
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
 }
