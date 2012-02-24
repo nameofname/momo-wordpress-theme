@@ -1,9 +1,11 @@
-
 <?php get_header(); ?>
 
 	<?php if (!$paged) { include ( TEMPLATEPATH . '/includes/featured-slider.php' ); } ?>
 	<?php $alt_class = 0; $homepage = true; ?>
     <div id="main">
+    <?php 
+    //print_r($paged); exit; 
+    ?>
     	<?php 
           if (!$paged && get_option('woo_widgets_footer_panel') == 'true') { 
       ?>
