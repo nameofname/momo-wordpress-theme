@@ -1,0 +1,64 @@
+.article-excerpt {
+	background: transparent;
+	border-bottom: #ccc solid 1px;
+	margin-bottom: 27px;
+	padding-bottom: 15px;
+	overflow:  hidden;
+	zoom: 1;
+	/**
+	 * @workaround fix width in IE6 to prevent content from growing
+	 * @affected ie6
+	 */
+	width: 100%;
+}
+
+.article-excerpt .header .title {
+	font: bold 18px Georgia, Serif;
+	margin-bottom: 5px;
+}
+.article-excerpt .header .meta {
+	color: #666;
+	font: italic 13px Georgia, Serif;
+	margin: 0 0 10px;
+}
+.article-excerpt .header .meta a:link {
+	color: #666;
+}
+.article-excerpt .header .meta a:hover {
+	color: #006b94;
+	text-decoration: none;
+}
+.article-excerpt .sep {
+	padding: 0 2px;
+}
+
+.article-excerpt-has-featured-image .content {
+	/**
+	 * @workaround min-height Fast Hack
+	 *
+	 * IE6 doesn't support min-height, but treats elements with
+	 * height and overflow:visible as min-height.
+	 *
+	 * @affected IE5, IE6
+	 * @see http://www.dustindiaz.com/min-height-fast-hack/
+	 */
+	height: auto !important;
+	height: 122px;
+	min-height: 122px;
+	/**
+	 * @workaround fix width for IE6 so that content is properly cropped
+	 * @affected ie6
+	 */
+	width: 475px;
+	position: relative;
+	padding-left: 155px;
+	zoom: 1;
+}
+.article-excerpt-has-featured-image img {
+	left: 0;
+	position: absolute;
+	top: 2px;
+}
+.article-excerpt .content {
+	margin-bottom: 12px;
+}

@@ -1,0 +1,245 @@
+/**
+ * TinyMCE styles for XML editor
+ */
+
+/** base
+ -------------------------------------------------- */
+body {
+	background: #F4F4F4;
+}
+
+/* visual wrapper for elements */
+h1,h2,h3,h4,h5,h6,p,heading,sec,caption,cap,
+fig, fig lbl, fig long-desc, fig license-p, 
+fig copyright-statement, fig copyright-holder,
+table-wrap, table-wrap lbl, disp-quote, preformat, para {
+	border: 1px solid #DFDFDF;
+	background-color: #fff;
+	display: block;
+	margin: 3px 0;
+	min-height: 18px;
+	padding: 4px 8px;
+}
+
+/** basic XML element styles
+ -------------------------------------------------- */
+heading {
+	font-size: 16px;
+	font-weight: bold;
+}
+underline {
+	text-decoration: underline;
+}
+italic {
+	font-style: italic;
+}
+bold {
+	font-weight: bold;
+}
+ext-link {
+	text-decoration: underline;
+	color: #0000FF;
+}
+xref {
+	font-size: xx-small;
+	vertical-align:top;
+	font-weight: bold;
+	padding-right: 1px;
+	background: #999;
+	display: inline;
+	width: 20px;
+}
+xref:before {
+
+}
+xref:after {
+
+}
+inline-graphic {
+	display: none;
+}
+monospace,
+preformat {
+	font-family: monospace;
+}
+preformat {
+	white-space: pre;
+}
+
+/** lists
+ -------------------------------------------------- */
+list {
+	display: block;
+}
+list[list-type=bullet] list-item:before,
+ul list-item:before {
+	content: "\2022 ";
+}
+list[list-type=order] {
+	counter-reset: item;
+}
+list[list-type=order] list-item:before,
+ol list-item:before {
+	content: counter(item) ". "; 
+	counter-increment: item;
+}
+list-item {
+	display: block;
+	margin-left: 10px;
+}
+
+/** quotes
+ -------------------------------------------------- */
+disp-quote {
+	font-style: italic;
+}
+disp-quote permissions {
+	font-style: normal;
+	display: none;
+}
+disp-quote attrib:before {
+	content: " - ";
+}
+disp-quote attrib {
+	font-style: normal;
+}
+
+/** tables
+ -------------------------------------------------- */
+table.mceitemtable {
+	border: none;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.mceitemtable td,
+table.mceitemtable th  {
+	border: 1px solid #999;
+	border-spacing: 0px;
+	padding: 3px 5px;
+	margin: 0px;
+	min-height: 20px;
+	min-width: 20px;
+}
+table.mceitemtable th {
+	font-size: 12px;
+}
+table-wrap {
+	display: inline-block;
+}
+table-wrap lbl {
+	font-weight: bold;
+}
+table-wrap lbl, table-wrap cap {
+	display: block;
+	border: 1px solid #dfdfdf;
+	margin: 4px 0;
+}
+th,
+td {
+	min-width: 15px;
+	padding: 0 3px;
+}
+
+/** Figures
+ -------------------------------------------------- */
+fig {
+	display: block;
+	padding: 5px;
+	min-height: 150px;
+}
+fig img {
+	float: left;
+	margin-right: 5px;
+	border: 1px solid #ccc;
+}
+fig media {
+	display: none;
+}
+fig alt-text {
+	display: none;
+}
+fig lbl {
+	font-weight: bold;
+	min-width: 250px;
+}
+fig cap {
+	min-width: 250px;
+}
+fig long-desc,
+fig copyright-statement,
+fig copyright-holder,
+fig license-p,
+fig cap,
+fig lbl {
+	display: block;
+	margin: 0 0 4px;
+	overflow: hidden;
+}
+fig long-desc,
+fig copyright-statement,
+fig copyright-holder,
+fig license-p {
+	font-size: 10px;
+}
+
+
+/** bg image labels
+ -------------------------------------------------- */
+cap,
+disp-quote,
+fig,
+fig lbl,
+heading,
+para,
+preformat,
+sec,
+table-wrap,
+table-wrap lbl {
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	padding-top: 9px;
+}
+
+cap {
+	background-image: url(../img/tinymce/caption.gif);
+}
+disp-quote {
+	background-image: url(../img/tinymce/quote.gif);
+}
+fig {
+	background-image: url(../img/tinymce/figure.gif);
+}
+fig lbl {
+	background-image: url(../img/tinymce/label.gif);
+}
+heading {
+	background-image: url(../img/tinymce/title.gif);
+}
+para {
+	background-image: url(../img/tinymce/paragraph.gif);
+}
+preformat {
+	background-image: url(../img/tinymce/preformat.gif);
+}
+sec {
+	background-image: url(../img/tinymce/section.gif);
+}
+table-wrap {
+	background-image: url(../img/tinymce/table.gif);
+}
+table-wrap lbl {
+	background-image: url(../img/tinymce/label.gif);
+}
+
+/** utilities
+ -------------------------------------------------- */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+	visibility: hidden;
+}

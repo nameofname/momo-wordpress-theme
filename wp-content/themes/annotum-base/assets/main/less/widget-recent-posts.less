@@ -1,0 +1,39 @@
+/* requires jQuery Tabs */
+.widget-recent-posts .nav {
+	margin-bottom: 11px;
+}
+.widget-recent-posts .nav li {
+	background: #dadada;
+	border-bottom: #006B94 solid 1px;
+	font: italic bold 14px Georgia, Serif;
+	margin-right: 6px;
+	padding: 0;
+}
+.widget-recent-posts .nav li a {
+	display: block;
+	padding: 4px 8px;
+}
+.widget-recent-posts .nav .ui-tabs-selected {
+	background: #006B94;
+}
+.widget-recent-posts .nav .ui-tabs-selected a {
+	color: #fff;
+}
+
+/* Javascript FOUC prevention */
+.js .widget-recent-posts .panel {
+	display: none;
+}
+.js .widget-recent-posts .first-child,
+.js .widget-recent-posts .ui-tabs-panel {
+	display: block;
+}
+.widget-recent-posts .recently-container {
+	border-bottom: #c2c2c2 solid 1px;
+	padding: 0 0 20px;
+}
+
+.widget-recent-posts .panel ul,
+.widget-recent-posts .panel ol {
+	list-style: none;
+}

@@ -1,0 +1,767 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: apz/includes/theme-functions.php:30
+msgid " Older Entries &raquo;"
+msgstr ""
+
+#. Text in function
+#: apz/comments.php:23
+msgid "% Responses"
+msgstr ""
+
+#. Text in function
+#: apz/includes/theme-functions.php:29
+msgid "&laquo; Newer Entries "
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:641
+msgid "<a href=\"http://www.gravatar.com/\">Gravatar</a> E-mail:"
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:99
+#: apz/includes/homepage-contact.php:92
+msgid "<strong>Thanks!</strong> Your email was successfully sent."
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:465
+msgid "Ad Code:"
+msgstr ""
+
+#. Text in echo
+#: apz/functions/admin-custom-nav.php:2358
+msgid "Advanced Options:"
+msgstr ""
+
+#. Text in echo
+#: apz/footer.php:51
+msgid "All Rights Reserved."
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:478
+msgid "Alt text:"
+msgstr ""
+
+#. Text in echo
+#: apz/archive.php:11
+#: apz/archive.php:14
+#: apz/archive.php:17
+#: apz/archive.php:20
+msgid "Archive"
+msgstr ""
+
+#. Text in echo
+#: apz/archive.php:23
+msgid "Archive by Author"
+msgstr ""
+
+#. Text in function
+#: apz/functions/admin-functions.php:820
+msgid "Author Archives"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/featured-slider.php:52
+msgid "Available on the AppStore"
+msgstr ""
+
+#. Text in echo
+#: apz/index.php:118
+msgid "Become a fan on Facebook"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:637
+msgid "Bio:"
+msgstr ""
+
+#. Text in echo
+#: apz/template-archives.php:30
+#: apz/template-sitemap.php:25
+msgid "Categories"
+msgstr ""
+
+#. Text in function
+#: apz/functions/admin-functions.php:820
+msgid "Category Archive"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:266
+#: apz/template-sitemap.php:46
+msgid "Comments"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:56
+msgid "Comments are closed."
+msgstr ""
+
+#. Text in function
+#: apz/template-blog.php:37
+#: apz/archive.php:53
+#: apz/search.php:33
+msgid "Comments { % }"
+msgstr ""
+
+#. Text in function
+#: apz/template-blog.php:37
+#: apz/archive.php:53
+#: apz/search.php:33
+msgid "Comments { 0 }"
+msgstr ""
+
+#. Text in function
+#: apz/template-blog.php:37
+#: apz/archive.php:53
+#: apz/search.php:33
+msgid "Comments { 1 }"
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "Contact Form Submission from "
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:84
+msgid "Customer Name:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:80
+msgid "Customer Quote:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:88
+msgid "Customer Website:"
+msgstr ""
+
+#. Text in echo
+#: apz/footer.php:55
+msgid "Designed by"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-comments.php:20
+msgid "Direct link to this comment"
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:141
+#: apz/includes/homepage-contact.php:116
+msgid "E-mail has not been setup properly. Please add your contact e-mail!"
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:155
+#: apz/includes/homepage-contact.php:130
+#: apz/includes/homepage-contact.php:131
+msgid "Email"
+msgstr ""
+
+#. Text in echo
+#: apz/page.php:31
+#: apz/template-blog.php:44
+#: apz/single.php:41
+#: apz/404.php:10
+#: apz/archive.php:60
+#: apz/search.php:41
+#: apz/template-fullwidth.php:32
+msgid "Error 404 - Page not found!"
+msgstr ""
+
+#. Text in echo
+#: apz/index.php:118
+msgid "Facebook"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:370
+msgid "Flickr ID (<a href=\"http://www.idgettr.com\">idGettr</a>):"
+msgstr ""
+
+#. Text in echo
+#: apz/index.php:117
+msgid "Follow us on Twitter"
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "From: "
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:649
+msgid "Gravatar Alignment:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:645
+msgid "Gravatar Size:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:385
+msgid "Group"
+msgstr ""
+
+#. Text in echo
+#: apz/header.php:81
+msgid "Home"
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:169
+#: apz/includes/homepage-contact.php:144
+msgid "If you want to submit this form, do not enter anything in this field"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:470
+msgid "Image Url:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:265
+#: apz/includes/theme-widgets.php:391
+msgid "Latest"
+msgstr ""
+
+#. Text in function
+#: apz/comments.php:68
+msgid "Leave a Reply"
+msgstr ""
+
+#. Text in function
+#: apz/comments.php:68
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:651
+msgid "Left"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:575
+msgid "Limit:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:474
+msgid "Link URL:"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:84
+msgid "Log out of this account"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:84
+msgid "Logged in as"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:84
+msgid "Logout"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:95
+msgid "Mail (will not be published)"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:399
+msgid "Medium"
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:162
+#: apz/includes/homepage-contact.php:139
+msgid "Message"
+msgstr ""
+
+#. Text in function
+#: apz/functions/admin-functions.php:820
+msgid "Monthly Archive"
+msgstr ""
+
+#. Text in echo
+#: apz/template-archives.php:36
+msgid "Monthly Archives"
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:148
+#: apz/comments.php:90
+#: apz/includes/homepage-contact.php:123
+#: apz/includes/homepage-contact.php:124
+msgid "Name"
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "Name: $name \\n\\nEmail: $email \\n\\nComments: $comments"
+msgstr ""
+
+#. Text in function
+#: apz/comments.php:23
+msgid "No Responses"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:52
+msgid "No comments yet."
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:307
+msgid "Number of posts:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:374
+msgid "Number:"
+msgstr ""
+
+#. Text in function
+#: apz/comments.php:23
+msgid "One Response"
+msgstr ""
+
+#. Text in echo
+#: apz/template-sitemap.php:19
+msgid "Pages"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:345
+msgid "Photos on <span>flick<span>r</span></span>"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:264
+msgid "Popular"
+msgstr ""
+
+#. Text in echo
+#: apz/template-sitemap.php:31
+msgid "Posts per category"
+msgstr ""
+
+#. Text in echo
+#: apz/footer.php:55
+msgid "Powered by"
+msgstr ""
+
+#. Text in echo
+#: apz/index.php:116
+msgid "RSS Feed"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:392
+msgid "Random"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:656
+msgid "Read More Text (optional):"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:660
+msgid "Read More URL (optional):"
+msgstr ""
+
+#. Text in echo
+#: apz/template-blog.php:36
+#: apz/archive.php:52
+#: apz/search.php:32
+msgid "Read full story"
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "Reply-To: "
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:95
+msgid "Required"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:652
+msgid "Right"
+msgstr ""
+
+#. Text in echo
+#: apz/search-form.php:3
+msgid "Search"
+msgstr ""
+
+#. Text in function
+#: apz/functions/admin-functions.php:820
+msgid "Search Results"
+msgstr ""
+
+#. Text in echo
+#: apz/search.php:10
+msgid "Search results"
+msgstr ""
+
+#. Text in echo
+#: apz/search-form.php:2
+msgid "Search..."
+msgstr ""
+
+#. Text in echo
+#: apz/functions/admin-custom-nav.php:2323
+msgid "Select Menu:"
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:168
+msgid "Send a copy of this email to yourself"
+msgstr ""
+
+#. Text in echo
+#: apz/functions/admin-custom-nav.php:2406
+msgid "Show Top Level Descriptions:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:396
+msgid "Size:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:389
+msgid "Sorting:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:398
+msgid "Square"
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:170
+#: apz/includes/homepage-contact.php:145
+msgid "Submit"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:109
+msgid "Submit Comment"
+msgstr ""
+
+#. Text in echo
+#: apz/index.php:116
+msgid "Subscribe to our RSS Feed"
+msgstr ""
+
+#. Text in function
+#: apz/functions/admin-functions.php:820
+msgid "Tag Archive"
+msgstr ""
+
+#. Text in echo
+#: apz/archive.php:26
+msgid "Tag Archives:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:267
+msgid "Tags"
+msgstr ""
+
+#. Text in echo
+#: apz/functions/admin-custom-nav.php:2426
+msgid "The Custom Menu has not been configured correctly.  Please check your theme settings before adding this widget."
+msgstr ""
+
+#. Text in echo
+#: apz/template-archives.php:20
+msgid "The Last 30 Posts"
+msgstr ""
+
+#. Text in echo
+#: apz/page.php:34
+#: apz/template-blog.php:47
+#: apz/single.php:44
+#: apz/404.php:13
+#: apz/archive.php:63
+#: apz/search.php:44
+#: apz/template-fullwidth.php:35
+msgid "The page you trying to reach does not exist, or has been moved. Please use the menus or the search box to find what you are looking for."
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:137
+#: apz/includes/homepage-contact.php:112
+msgid "There was an error submitting the form."
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:400
+msgid "Thumbnail"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:312
+msgid "Thumbnail Size (0=disable):"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:461
+msgid "Title (optional):"
+msgstr ""
+
+#. Text in echo
+#: apz/functions/admin-custom-nav.php:2349
+#: apz/includes/theme-widgets.php:567
+#: apz/includes/theme-widgets.php:633
+msgid "Title:"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:40
+msgid "Trackbacks/Pingbacks"
+msgstr ""
+
+#. Text in echo
+#: apz/index.php:117
+msgid "Twitter"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:382
+msgid "Type:"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:92
+msgid "Upload Customer Image"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:384
+msgid "User"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-widgets.php:571
+msgid "Username:"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:100
+msgid "Website"
+msgstr ""
+
+#. Text in function
+#: apz/includes/theme-widgets.php:442
+msgid "Woo - Adspace Widget"
+msgstr ""
+
+#. Text in function
+#: apz/includes/theme-widgets.php:579
+msgid "Woo - Blog Author Info"
+msgstr ""
+
+#. Text in function
+#: apz/functions/admin-custom-nav.php:1987
+msgid "Woo - Custom Nav Menu"
+msgstr ""
+
+#. Text in function
+#: apz/includes/theme-widgets.php:1
+msgid "Woo - Customer Feedback Widget"
+msgstr ""
+
+#. Text in function
+#: apz/includes/theme-widgets.php:316
+msgid "Woo - Flickr"
+msgstr ""
+
+#. Text in function
+#: apz/includes/theme-widgets.php:481
+msgid "Woo - Search"
+msgstr ""
+
+#. Text in function
+#: apz/includes/theme-widgets.php:212
+msgid "Woo - Tabs"
+msgstr ""
+
+#. Text in function
+#: apz/includes/theme-widgets.php:579
+msgid "Woo - Twitter Stream"
+msgstr ""
+
+#. Text in echo
+#: apz/footer.php:55
+msgid "Wordpress"
+msgstr ""
+
+#. Text in echo
+#: apz/functions/admin-custom-nav.php:2378
+msgid "Wrap in container DIV:"
+msgstr ""
+
+#. Text in echo
+#: apz/functions/admin-custom-nav.php:2391
+msgid "Wrap in container UL:"
+msgstr ""
+
+#. Text in function
+#: apz/functions/admin-functions.php:820
+msgid "Yearly Archive"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:105
+msgid "You can use these tags"
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "You emailed "
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:89
+#: apz/includes/homepage-contact.php:82
+msgid "You entered an invalid"
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "You entered an invalid email address."
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:82
+#: apz/includes/homepage-contact.php:75
+msgid "You forgot to enter your"
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "You forgot to enter your comments."
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "You forgot to enter your email address."
+msgstr ""
+
+#. Text in function
+#: apz/template-contact.php:7
+#: apz/includes/homepage-contact.php:1
+msgid "You forgot to enter your name."
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:76
+msgid "You must be"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-comments.php:30
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. Text in echo
+#: apz/template-contact.php:118
+#: apz/includes/homepage-contact.php:106
+msgid "Your email was successfully sent."
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-comments.php:19
+msgid "at"
+msgstr ""
+
+#. Text in echo
+#: apz/template-blog.php:25
+#: apz/single.php:18
+#: apz/archive.php:41
+#: apz/search.php:21
+msgid "by"
+msgstr ""
+
+#. Text in echo
+#: apz/template-archives.php:26
+msgid "comments"
+msgstr ""
+
+#. Text in echo
+#: apz/template-blog.php:27
+#: apz/single.php:20
+#: apz/archive.php:43
+#: apz/search.php:23
+msgid "in"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:76
+msgid "logged in"
+msgstr ""
+
+#. Text in echo
+#: apz/template-blog.php:26
+#: apz/single.php:19
+#: apz/archive.php:42
+#: apz/search.php:22
+msgid "on"
+msgstr ""
+
+#. Text in echo
+#: apz/includes/theme-functions.php:115
+msgid "on "
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:23
+msgid "to"
+msgstr ""
+
+#. Text in echo
+#: apz/comments.php:76
+msgid "to post a comment."
+msgstr ""
+
+#. Text in function
+#: apz/template-blog.php:28
+#: apz/single.php:21
+#: apz/archive.php:44
+#: apz/search.php:24
+msgid "{ Edit }"
+msgstr ""

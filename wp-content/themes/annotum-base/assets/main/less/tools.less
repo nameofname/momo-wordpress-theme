@@ -1,0 +1,159 @@
+.tools-bar {
+	margin-bottom: 25px;
+	padding: 17px 12px;
+}
+.tools-bar .cell {
+	float: left;
+}
+.tools-bar {
+	line-height: 20px;
+}
+.tools-bar .print,
+.tools-bar .citation {
+	margin-right: 36px;
+}
+.tools-bar .citation {
+	position: relative;
+}
+.tools-bar .citation-container {
+	background: #f6f6f6;
+	border: #dadada solid 1px;
+	border-top: 0;
+	display: none;
+	left: -10px;
+	padding: 0 10px 10px 10px;
+	position: absolute;
+	top: 37px;
+	width: 449px;
+	z-index: 1000;
+}
+.tools-bar .citation textarea.entry-summary {
+	width: 430px;
+}
+.tools-bar .print a {
+	background: url(../img/sprite-y.24bit.png) 0 -200px no-repeat;
+	padding-left: 19px;
+}
+.tools-bar .citation a {
+	background: url(../img/sprite-y.24bit.png) 0 -595px no-repeat;
+	cursor: pointer;
+	padding-left: 19px;
+}
+.tools-bar .download {
+	background: url(../img/sprite-y.24bit.png) 0 -297px no-repeat;
+	padding-left: 17px;
+}
+.tools-bar .share {
+	float: right;
+}
+
+
+
+/* Tools Nav */
+.tools-nav {
+	font-size: 12px;
+	left: 0;
+	line-height: 1.5;
+	position: absolute;
+	top: 0;
+	width: 165px;
+	z-index: 1000;
+}
+.tools-nav .tools-menu-item {
+	position: absolute;
+	width: 158px;
+}
+.tools-nav .tools-menu-item .header {
+	background: url(../img/tools-content-background.png) 0 0 no-repeat;
+	padding: 17px 18px 0 11px;
+}
+
+.tools-nav .tools-menu-item .body {
+	background: url(../img/tools-content-background.png) 0 bottom no-repeat;
+	padding: 7px 16px 21px 11px;
+}
+.tools-nav .tools-menu-item .title {
+	border-bottom: #d3dbe1 solid 1px;
+	font: italic bold 14px Georgia, Serif;
+	padding: 0 0 2px;
+}
+.tools-menu-item ul {
+	margin-left: 1px;
+}
+.tools-menu-item li {
+	background: url(../img/sprite-y.8bit.png) 0 -393px no-repeat;
+	padding-left: 7px;
+}
+.tools-nav .nav {
+	right: -11px;
+	position: absolute;
+	top: 2px;
+}
+.tools-nav .nav li {
+	display: block;
+	float: none;
+	list-style: disc;
+	margin-bottom: 1px;
+}
+.tools-nav a {
+	background: #006b94 url(../img/sprite-y.24bit.png) 0 100px no-repeat;
+	display: block;
+	height: 22px;
+	width: 22px;
+}
+.tools-nav .active a {
+	background-color: #e0e6ea;
+}
+.tools-nav a.content {
+	background-position: -96px -394px;
+}
+.tools-nav a.download {
+	background-position: -96px -296px;
+}
+.tools-nav a.comments {
+	background-position: -96px -495px;
+}
+.tools-nav .active a.content {
+	background-position: -196px -394px;
+}
+.tools-nav .active a.download {
+	background-position: -196px -296px;
+}
+.tools-nav .active a.comments {
+	background-position: -196px -495px;
+}
+
+.social-nav a,
+.social-nav iframe {
+	/**
+	 * Take care of extra space added by line-height when display:inline-block
+	 */
+	display: block;
+}
+
+/**
+ * Prevent Javascript FOUC on Twitter button
+ */
+a.twitter-share-button {
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	visibility: hidden;
+	height: 20px;
+	width: 55px;
+}
+
+/**
+ * Use in conjunction with .imr
+ */
+a.email {
+	background: url(../img/sprite-y.8bit.png) no-repeat 0 -700px;
+	height: 20px;
+	width: 60px;
+}
+a.email:hover,
+a.email:focus {
+	background-position: 0 -800px;
+}
+a.email:active {
+	background-position: 0 -900px;
+}

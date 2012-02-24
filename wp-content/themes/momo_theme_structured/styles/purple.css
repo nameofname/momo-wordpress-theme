@@ -1,0 +1,11 @@
+/* Purple Stylesheet */
+
+body, #feature, #tabs ul.wooTabs li a.selected, #tabs ul.wooTabs li a:hover, #tabs .inside, .button, .button:visited, .reply a, #footer  { background-color: #9c579f; }
+h1, h2, h3, h4, h5, h6, .feedback-widget .customer-quote  { color: #464849; }
+a:link, a:visited, .section .heading h2  { color: #9c579f; }
+.section .heading .sub-heading  { color: #929292; }
+#main, .widget_woo_flickr a:hover img, .adspace-widget img  { border-color: #9c579f; }
+.section, #innerpage, .archive_header, #innerpage .post, #innerpage .page, .post-more, .widget ul li, .widget ul, #sidebar .widget_woo_search, .widget_woo_flickr a img, .feedback-widget, .feedback-widget .customer-image img, #wp-calendar th,#wp-calendar td, .widget_woo_blogauthorinfo .avatar, #tabs .inside ul, #tabs .inside li, #comments, #comments .comment.thread-even, #comments ul.children li, .pinglist  { border-color: #e9e9e9; }
+.section.alt, .section.footer, .nav-entries, .wp-pagenavi, .post-entries, #wp-calendar th,#wp-calendar td, #comments .comment.thread-odd  { background-color: #f6edf6; }
+#loopedSlider .container, #wp-calendar th,#wp-calendar td { color: #919191; }
+#feature .info, #feature .info.horizontal, #feature .info blockquote, #feature .info h1, #feature .info h2, #feature .info h3, #feature .info h4, #feature .info h5, #feature .info h6  { color: #fff; }

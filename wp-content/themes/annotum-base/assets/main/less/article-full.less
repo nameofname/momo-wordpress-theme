@@ -1,0 +1,155 @@
+/** @section General
+ -------------------------------------------------- */
+
+.article-full {
+	background: url(../img/article-border.png) repeat-x 0 bottom;
+	margin-bottom: 34px;
+	padding-bottom: 5px;
+}
+
+/* Crop overflow */
+.article-full .entry-title,
+.article-full .main {
+	overflow:  hidden;
+	zoom: 1;
+	/**
+	 * @workaround fix width in IE6 to prevent content from growing
+	 * @affected ie6
+	 */
+	width: 100%;
+}
+
+/* Keep margins consistent using margin collapse */
+.article-full .content .entry-content,
+.article-full .content .entry-summary {
+	margin-bottom: 10px;
+}
+
+/** @author Header
+ -------------------------------------------------- */
+
+.author-header {
+	/**
+	 * @workaround min-height Fast Hack
+	 *
+	 * IE6 doesn't support min-height, but treats elements with
+	 * height and overflow:visible as min-height.
+	 *
+	 * @affected IE5, IE6
+	 * @see http://www.dustindiaz.com/min-height-fast-hack/
+	 */
+	height: auto !important;
+	height: 145px;
+	min-height: 145px;
+	
+	margin-bottom: 25px;
+	position: relative;
+	padding-left: 160px;
+}
+.author-header .avatar {
+	left: 0;
+	position: absolute;
+	top: 5px;
+}
+.author-header .author-name {
+	display: block;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.author-header .author-link a {
+	font: italic normal 14px Georgia, serif;
+}
+.author-header .author-link,
+.author-header .author-degrees,
+.author-header .author-affiliations {
+	margin-bottom: 7px;
+}
+.author-header .author-bio {
+	line-height: 1.29;
+}
+
+/** @section Header
+ -------------------------------------------------- */
+.article-full .header {
+	margin-bottom: 20px;
+}
+.article-full .header .entry-title a {
+	color: #000;
+}
+.article-full .header .entry-title .title {
+	font: bold 28px/1.2 Georgia, Serif;
+	margin-bottom: 5px;
+}
+.article-full .header .entry-title .subtitle {
+	font: bold 18px/1.2 Georgia, Serif;
+	margin-bottom: 8px;
+}
+.article-full .header .sec .title {
+	display: block;
+}
+.article-full .header .meta {
+	color: #666;
+	font: italic 13px/1.5384 Georgia, Serif;
+	margin: 0 15px 15px;
+}
+.article-full .header .meta a:link {
+	color: #666;
+}
+.article-full .header .meta a:hover {
+	color: #006b94;
+	text-decoration: none;
+}
+
+/** @section Footer
+ -------------------------------------------------- */
+
+.article-full .footer {
+	margin-bottom: 25px;
+}
+
+/** @section Content Area
+ -------------------------------------------------- */
+
+.article-full .content {
+	/**
+	 * Keep bottom spacing consistent using margin-collapse
+	 */
+	margin-bottom: 25px;
+	padding: 0 15px;
+}
+/* Remove padding from .secs in favor of the padding provided
+by .entry-content */
+.article-full .content .sec {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.article-full textarea.entry-summary {
+	clear: left;
+	font-size: 12px;
+	line-height: 18px;
+	height: 54px;
+	padding: 9px;
+	width: 95%;
+}
+
+/* Supplement Styles */
+.article-full .supplement {
+	background: #f6f6f6;
+	border-bottom: #dadada solid 1px;
+	border-top: #dadada solid 1px;
+	margin-left: 15px;
+	margin-right: 15px;
+	position: relative;
+}
+
+.article-full .to-top {
+	text-align: right;
+}
+.article-full .to-top a {
+	background: #006B94;
+	color: #fff;
+	font-weight: bold;
+	padding: 4px 8px;
+}

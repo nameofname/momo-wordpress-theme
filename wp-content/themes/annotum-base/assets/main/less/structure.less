@@ -1,0 +1,192 @@
+/*
+Each main section of the site is an "Act"
+Act 1: Header
+Act 2: Content
+Act 3: Footer
+*/
+.act .in {
+	.clearfix;
+	
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 960px;
+}
+
+/** @section Header
+ -------------------------------------------------- */
+#header {
+	background: #000;
+	/*background: #006b94;*/
+	color: #fff;
+	position: relative;
+	z-index: 2;
+	/**
+	 * @bugfix hasLayout fix
+	 * Resolves weird jumpy header issue.
+	 * @affected IE6
+	 * @valid no
+	 */
+	zoom: 1;
+}
+#header .header-body {
+	background: #006b94;
+	position: relative;
+}
+#header .header-body a,
+#site-nav a {
+	color: #fff;
+}
+
+#header .navigation {
+	background: #006b94;
+}
+#masthead {
+	background: #006b94;
+}
+#main {
+	padding-top: 35px;
+}
+#main-body,
+#masthead-body {
+	float: left;
+	margin-right: 30px;
+	width: 630px;
+}
+#masthead-body {
+	overflow: hidden;
+}
+
+#main-body,
+#main-sidebar {
+	padding-bottom: 50px;
+}
+
+#main-sidebar,
+#masthead-sidebar {
+	float: left;
+	overflow: hidden;
+	width: 300px;
+}
+
+
+#site-name {
+	font-size: 36px;
+	font-weight: normal;
+	line-height: 1.2;
+	padding: 35px 0 8px 0;
+	text-shadow: rgba(0, 0, 0, .8) 0 1px 0;
+}
+#site-nav {
+	background: #66a6bf;
+	font-weight: bold;
+	font-size: 14px;
+	height: 34px;
+}
+#site-nav .nav {
+	display: inline;
+	float: left;
+}
+#site-nav li {
+	border-color: #006b94;
+	border-style: solid;
+	border-right-width: 1px;
+	color: #66A6BF;
+	position: relative;
+	zoom: 1;
+}
+#site-nav li ul {
+	background: #66A6BF;
+	display: none;
+	position: absolute;
+	width: 150px;
+	z-index: 1000;
+}
+#site-nav li li {
+	border: none;
+	float: none;
+}
+#site-nav li li a {
+	background: none;
+}
+#site-nav li:hover ul,
+#site-nav li.hover ul {
+	display: block;
+}
+#site-nav a {
+	line-height: 20px;
+	padding: 7px 10px;
+}
+#secondary-nav {
+	display: inline;
+	bottom: 11px;
+	position: absolute;
+	right: 0;
+	zoom: 1;
+}
+
+/**
+ * @bugfix hasLayout reversal
+ * @affected IE6
+ * @valid yes
+ * Fixes bug that causes menu items to be aligned left and overlap the logo.
+ * hasLayout triggered on these nav els, which prevents the "shrink wrapping" that
+ * position:absolute normally triggers. We'll work around this by triggering
+ * faux inline-block with hasLayout + display:inline.
+ */
+.ie6 #secondary-nav,
+.ie6 #secondary-nav .nav {
+	display: inline;
+}
+#secondary-nav li {
+	background-image: url(../img/sprite-y.8bit.png);
+	background-position: 0 10px;
+	background-repeat: no-repeat;
+	margin-left: 8px;
+	padding-left: 9px;
+}
+#secondary-nav li:first-child,
+#secondary-nav li.first-child {
+	background: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#masthead {
+	padding: 35px 0;
+}
+#footer {
+	padding-bottom: 20px;
+}
+#footer .in {
+	border-top: #ddd solid 1px;
+	padding-top: 10px;
+}
+#footer,
+#footer a {
+	color: #787878;
+	font-size: 11px;
+}
+#footer label,
+#footer .nav {
+	float: left;
+}
+#footer .nav li {
+	background: url(../img/sprite-y.8bit.png) 0 -293px no-repeat;
+	margin-left: 6px;
+	padding-left: 8px;
+}
+#footer .nav li:first-child {
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+#dashboard_right_now #article-dashboard-summary {
+	position: static;
+	top: auto;
+	left: auto;
+	margin: 15px 5px 0;
+	padding: 0 0 5px 0;
+	border-bottom: #ECECEC 1px solid;
+}

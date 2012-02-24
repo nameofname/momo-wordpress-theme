@@ -1,0 +1,46 @@
+*** Apz Changelog ***
+
+2010.11.12 - version 2.0.3
+ * includes/theme-functions.php - fixed bug with saving custom field images
+
+2010.11.01 - version 2.0.2
+ * style.css - Adjusted styling to support iPhone 4 image
+ * images/iphone.png - Replaced with iPhone 4 image
+ * images/iphone-horizontal.png - Replaced with iPhone 4 image
+ * includes/featured-slider.png - Adjusted to support iPhone 4 images
+
+2010.10.19 - version 2.0.1
+ * Changed page title to H1
+
+2010.10.07 - version 2.0
+ * CUSTOM POST TYPES
+ * includes/featured.php - new query for CPT slide and media
+ * includes/theme-functions.php - added CTP slide and media
+ * includes/theme-options.php - removed options
+ * index.php, template-blog.php - removed category exclude before query
+
+2010.09.15 - version 1.1.3
+ * includes/homepage-contact.php - fixed form submit url so it works properly
+
+2010.07.12 - version 1.1.2
+ * style.css - Fixed Thickbox styling bug and added aditional styling
+ * css/effects.css - Added ThickBox styling
+
+2010.06.28 - version 1.1.1
+ * style.css - Fixed Gravity form styling bug
+
+2010.06.21 - version 1.1.0
+ * header.php - Added theme support for WordPress 3.0 Menu Management
+ * /includes/theme-functions.php - Added theme support for WordPress 3.0 Menu Management
+ 
+2010.06.09 - version 1.0.3
+ * style.css - added styling for Gravity forms
+
+2010.05.21 - version 1.0.2
+ * includes/featured-slider.php - removed iphone frame if no image is uploaded to page
+
+2010.05.20 - version 1.0.1
+ * index.php - fixed contact form not showing if blog and widgets disabled on homepage
+ 	
+2010.05.19 - version 1.0
+ * First release!

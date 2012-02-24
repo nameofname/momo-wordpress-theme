@@ -1,0 +1,102 @@
+/** @section Publish Box
+ -------------------------------------------------- */
+#submitdiv .inside {
+	margin: 0;
+	padding: 0;
+}
+
+#submitdiv .center {
+	margin: 0 auto;
+	float: none;
+	text-align:center;
+	display: inline;	
+}
+
+#submitdiv .center-wrap {
+	float: none;
+	text-align: center;
+}
+
+#submitdiv .float-left {
+	float: left;
+	text-align: center;
+}
+
+#submitdiv .float-right {
+	float: right;
+	text-align: center;
+}
+
+#submitdiv .publishing {
+	display: inline;
+}
+
+#submitdiv .status-text {
+	font-weight: bold;
+	text-align: center;
+}
+
+#submitdiv .major .button-primary {
+	min-width: 80px;
+	display: inline-block;
+}
+
+/** @section Author/Reviewer management
+ -------------------------------------------------- */
+#reviewer-input,
+#co-author-input {
+	width: 80%;
+}
+
+ul#reviewer-list li,
+ul#co-author-list li {
+	border-bottom: 1px solid #dfdfdf;
+	margin: 6px 0;
+	padding-bottom: 6px;
+	min-height: 36px;
+}
+
+ul#reviewer-list li:hover .anno-user-remove,
+ul#co-author-list li:hover .anno-user-remove {
+	visibility: visible;
+}
+
+ul#reviewer-list img,
+ul#co-author-list img {
+	vertical-align: top;
+	float: left;
+	margin-right: 8px;
+}
+
+#anno-invite-reviewer label,
+#anno-invite-co_author label {
+	display: block;
+}
+
+#anno-invite-reviewer label span, 
+#anno-invite-co_author label span {
+	min-width: 75px;
+	display: inline-block;
+}
+
+.anno-user-add-wrap {
+	border-bottom: 1px solid #DFDFDF;
+	margin: 5px 0;	
+	padding: 5px 0;
+}
+
+.anno-user-info {
+	font-size: 12px;
+}
+
+.anno-user-remove {
+	visibility: hidden;
+}
+
+.anno-error {
+	color: red;
+}
+
+.anno-success {
+	color: green;
+}

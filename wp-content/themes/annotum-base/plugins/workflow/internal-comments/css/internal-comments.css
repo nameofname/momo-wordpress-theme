@@ -1,0 +1,67 @@
+#the-comment-list-general td,
+#the-comment-list-review td {
+	padding: 10px;
+}
+
+#the-comment-list-general p.comment-content,
+#the-comment-list-review p.comment-content {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#the-comment-list-general td.author,
+#the-comment-list-review td.author {
+	width: 25%;
+	min-width: 220px;
+	line-height: 1.4em;
+}
+
+#the-comment-list-general textarea,
+#the-comment-list-review textarea {
+	width: 90%;
+	display: block;
+	height: 90px;
+}
+
+a.anno-trash-comment{
+	color: #BC0B0B;
+}
+
+#general-comment .inside,
+#reviewer-comment .inside {
+	margin: 0;
+	padding: 0;
+}
+
+.review-section {
+	border-bottom: 1px solid #DFDFDF;
+	padding: 10px;
+}
+.review-section select {
+	margin: 0 3px;
+}
+.review-section span {
+	color: #666;
+	font-style: italic;
+}
+.review-section.status-1 { /* approve */
+	background-color: #dff9e4;
+}
+.review-section.status-2 { /* revisions */
+	background-color: #faecde;
+}
+.review-section.status-3 { /* reject */
+	background-color: #fbe1e3;
+}
+
+dl.anno-versions {
+	margin-bottom: 10px;
+}
+dl.anno-versions dt {
+	color: #777;
+	margin: 8px 0 2px 0;
+}
+dl.anno-versions dd {
+	margin: 0 0 4px 0;
+	padding-left: 10px;
+}

@@ -1,0 +1,490 @@
+.wp-switch-editor {
+	display: none !important;
+}
+.wp-editor-tools {
+	display: none !important;
+}
+
+select#article-category {
+	width: 90%;
+}
+
+.appendix-wrapper {
+	background: #f9f9f9;
+	margin: 0 0 20px 0;
+}
+
+.appendix-wrapper h4 {
+	background:#f1f1f1;
+	border-top:1px solid #dfdfdf;
+	border-bottom:1px solid #dfdfdf;
+	font-size:13px;
+	font-weight: bold;
+	margin:0;
+	padding:5px 8px 8px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+textarea.anno-meta {
+	width: 100%;
+}
+
+#body .inside,
+#appendices .inside {
+	margin: 0;
+	padding: 0;
+}
+
+#appendices td.mceStatusbar {
+	color: #ff00ff;
+	border-bottom: 1px solid #DFDFDF;
+}
+
+#body .wp_themeSkin .mceStatusbar a.mceResize,
+#appendices .wp_themeSkin .mceStatusbar a.mceResize {
+	top: -2px;
+}
+
+#doi-deposit {
+	text-align: center;
+}
+#doi-deposit input[type="button"] {
+	cursor: pointer;
+}
+.meta-doi-input {
+	width: 100%;
+}
+
+/** TinyMCE Popups - override default styles
+ -------------------------------------------------- */
+body .wp-dialog {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	border: 1px solid #555;
+	-moz-box-shadow: rgba(0,0,0,1) 0 4px 30px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 4px 30px;
+    -khtml-box-shadow: rgba(0,0,0,1) 0 4px 30px;
+    box-shadow: rgba(0,0,0,1) 0 4px 30px;
+}
+body .wp-dialog .ui-dialog-titlebar {
+	background-color: #222;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	padding: 0 10px;
+}
+body .wp-dialog .ui-dialog-title {
+	color: #cfcfcf;
+	font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 27px;
+	padding: 0;
+	text-align: left;
+}
+body .wp-dialog .ui-dialog-titlebar-close,
+body .wp-dialog .ui-dialog-titlebar-close:hover {
+	background: url(../img/tinymce/tb-close.png) 0 0 no-repeat;
+	height: 15px;
+	right: 10px;
+	top: 6px;
+	width: 15px;
+}
+body .ui-widget-overlay {
+	opacity: .75;
+	filter: alpha(opacity=75);
+}
+
+
+/** TinyMCE Popup Content
+ -------------------------------------------------- */
+.anno-mce-popup {
+	background-color: #f9f9f9;
+}
+.anno-mce-popup-fields {
+	background-color: #fff;
+	min-height: 129px;
+	padding: 10px;
+}
+.anno-mce-popup label,
+.anno-mce-popup p {
+	display: block;
+	margin: 0;
+	padding: 5px 0px;
+}
+.anno-mce-popup label span {
+	width: 125px;
+	display: block;
+	float: left;
+}
+.anno-mce-popup .ajax-loading {
+	visibility: hidden;
+}
+.anno-mce-popup textarea {
+	width: 330px;
+	max-width: 460px;
+	height: 75px;
+	margin: 0;
+}
+.anno-mce-popup input {
+	width: 330px;
+	margin: 0;
+}
+.anno-mce-popup input.short {
+	width: 200px;
+	margin: 0;
+}
+.anno-mce-popup input[type="button"],
+.anno-mce-popup input[type="submit"] {	
+	width: auto;
+	cursor: pointer;
+	min-width: 100px;
+}
+.anno-mce-popup input[type="button"].blue,
+.anno-mce-popup input[type="submit"].blue {
+	text-decoration: none;
+	font-size: 12px!important;
+	line-height: 13px;
+	cursor: pointer;
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-khtml-box-sizing: content-box;
+	box-sizing: content-box;
+	border-color: #298CBA;
+	font-weight: bold;
+	color: white;
+	background: #21759B url(../img/button-grad.png) repeat-x scroll left top;
+	text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
+}
+
+.anno-mce-popup input[type="checkbox"] {
+	width: auto;
+	margin-left: 5px;
+}
+.anno-mce-popup legend {
+	padding: 0px 5px;
+}
+.anno-mce-popup fieldset {
+	border: 1px solid #CCC;
+	margin: 10px 0;
+	padding: 10px 30px;
+}
+.anno-mce-popup fieldset label {
+	display: inline;
+	width: 200px;
+	margin: 0 30px 0 20px;
+}
+.anno-mce-popup fieldset label input.short-text {
+	width: 100px;
+}
+.anno-mce-popup fieldset label span {
+	margin-right: 10px;
+	width: auto;
+	display: inline;
+	float: none;
+}
+.anno-mce-popup table {
+	border-collapse: collapse;
+}
+.anno-mce-popup table td {
+	margin: 0px;
+	padding: 0px;
+}
+
+div.popup-error {
+	background-color: #FFEBE8;
+	border-color: #C00;
+	margin: 10px 0 10px 8px;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px 12px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: none;
+	font-weight: bold;
+}
+
+/** Tips
+ -------------------------------------------------- */
+#anno-popup-tips {
+	padding: 10px;
+}
+#anno-popup-tips dt {
+	margin: 10px 0 0 0;
+	font-weight: bold;
+}
+#anno-popup-tips dt:first-child {
+	margin-top: 0;
+}
+#anno-popup-tips dd {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/** Insert Custom Character
+ -------------------------------------------------- */
+
+
+/** TinyMCE References Popup
+ -------------------------------------------------- */
+table#anno-references {
+	border: 1px solid #dfdfdf;
+	border-bottom: 0;
+	width: 100%;
+}
+table#anno-references td {
+	border-bottom: 1px solid #dfdfdf;
+}
+.references-link {
+	display: none;
+}
+.anno-reference-edit {
+	border-top: 1px solid #dfdfdf;
+	display: none;
+	padding: 5px 10px;
+}
+table#anno-references td.reference-checkbox {
+	padding-left: 5px;
+	padding-right: 10px;
+}
+.reference-actions {
+	min-width: 100px;
+	text-align: center;
+}
+.reference-text {
+	width: 340px;
+}
+textarea[name="figures"] {
+	margin-left: 125px;
+}
+/* nested table */
+table#anno-references table td {
+	border: none;
+}
+table#anno-references table td table td {
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px solid #444444;
+}
+#anno-references input[type="button"]:disabled,
+#anno-references input[type="button"]:disabled:hover {
+	font-weight: normal;
+	background: #EEE;
+	border-color: #BBB;
+	color: #464646;
+	text-shadow: none;
+}
+/** TinyMCE Images Popup
+ -------------------------------------------------- */
+#anno-popup-images {
+	overflow-x: hidden !important;
+	width:480px;
+	min-width: 480px;
+}
+#anno-popup-images .swfupload {
+	vertical-align: bottom;
+}
+#anno-popup-images-inside.anno-mce-popup input[type="file"] {
+	width: 300px;
+}
+#anno-popup-images-inside table {
+	border-bottom: 0;
+}
+#anno-popup-images-inside table tr,
+#anno-popup-images-inside table td {
+	border: 0;
+}
+#anno-popup-images-inside table tbody tr {
+	border: 1px solid #dfdfdf;
+}
+#anno-popup-images-inside table td.img-list-img,
+#anno-popup-images-inside table td.img-list-title,
+#anno-popup-images-inside table td.img-list-actions {
+	padding: 2px;
+}
+#anno-popup-images-inside table td.img-list-img {
+	width: 50px;
+}
+#anno-popup-images-inside table td.img-list-img img {
+	width: 50px;
+	height: 50px;
+}
+#anno-popup-images-inside table td.img-list-title,
+#anno-popup-images-inside table td.img-list-actions {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#anno-popup-images-inside table td.img-list-title {
+	width: 260px;
+}
+#anno-popup-images-inside table td.img-list-actions {
+	text-align: center;
+	width: 100px;
+}
+#anno-popup-images-inside table tr th {
+	height: 0px !important;
+}
+.anno-image-upload-box {
+	height: 40px;
+	text-align: center;
+	background: #EEEEEE;
+	border-top: none;
+}
+.img-list-actions a {
+	color: #21759B;
+}
+.anno-img-edit {
+	display: none;
+	border-bottom: 1px solid #dfdfdf;
+	padding: 5px 10px;
+}
+.img-edit-td {
+	border-bottom: none;
+	border-top: none;
+}
+.img-edit-td .anno-mce-popup-footer {
+	width: auto;
+}
+.anno-img-edit img {
+	float: left;
+	height: 130px;
+	width: 130px;
+	margin: 10px 10px 0 0;
+}
+#anno-popup-images-inside fieldset.img-sizes {
+	text-align: center;
+}
+#anno-popup-images-inside fieldset.img-sizes label {
+	display: inline;
+	margin: 0 15px;
+}
+#anno-popup-equations fieldset label,
+#anno-popup-quote fieldset label,
+#anno-popup-images-inside fieldset label {
+	display: block;
+	width: auto;
+	margin: 10px 0 0 0;
+	padding: 0;
+}
+#anno-popup-equations fieldset textarea,
+#anno-popup-equations fieldset input,
+#anno-popup-images-inside fieldset input,
+#anno-popup-images-inside fieldset textarea {
+	width: 240px;
+}
+#anno-popup-equations fieldset label span,
+#anno-popup-quote fieldset label span,
+#anno-popup-images-inside fieldset label span {
+	width: 120px;
+	float: left;
+}
+#anno-popup-equations fieldset label.radio,
+#anno-popup-images-inside fieldset label.radio {
+	display: inline;
+	margin: 0 10px 0 45px;
+}
+#anno-popup-equations fieldset label,
+#anno-popup-images-inside fieldset label {
+	margin-bottom: 10px;
+}
+#anno-popup-equations fieldset label input[type="radio"],
+#anno-popup-images-inside fieldset input[type="radio"] {
+	width: auto;
+}
+#anno-popup-equations fieldset label.radio span,
+#anno-popup-images-inside fieldset label.radio span {
+	width: 120px;
+	float: none;
+}
+.img-edit-details input,
+.img-edit-details textarea  {
+	width: 294px;
+	min-width: 294px;
+	max-width: 294px;
+}
+.img-insert {
+	padding: 10px;
+	height: 20px;
+	background: #EEEEEE;
+	text-align: center;
+}
+.anno-mce-popup-footer {
+	width: 100%;
+	padding: 10px 0;
+	background: #EEEEEE;
+	text-align: center;
+}
+table tr td.anno-mce-popup-footer {
+	padding: 5px 0;
+}
+#anno-popup-images-inside.anno-mce-popup {
+	padding: 0px;
+	margin: 0px;
+}
+#anno-popup-images-inside .media-item .original {
+	width: auto;
+	height: 50px;
+	display: table-cell;
+	vertical-align: middle;
+}
+#anno-popup-images-inside .progress {
+	height: 24px;
+	margin-top: 12px;
+}
+#anno-popup-images-inside .progress .bar {
+	margin-top: 0;
+	padding-left: 5px;
+}
+.tinymce-uploader {
+	margin: 1em 0;
+}
+#anno-popup-images-inside {
+	padding-top: 10px;
+}
+#anno-popup-images-inside .anno-mce-popup-fields {
+	margin-top: 0px;
+}
+#anno-popup-images-inside div.img-url-input span {
+	width: 41px;
+	margin-top: 2px;
+}
+#anno-popup-images-inside div.img-url-input input {
+	width: 395px;
+}
+#anno-popup-images-inside div.img-url-buttons {
+	margin-left: 41px;
+}
+
+/** TinyMCE Equations Popup, Most definitions made in images section
+ -------------------------------------------------- */
+#anno-popup-equations input[name="alt_text"],
+#anno-popup-equations textarea {
+	width: 100%;
+	max-width: 100%;
+}
+.anno-mce-popup {
+	overflow-x: hidden !important;
+}
