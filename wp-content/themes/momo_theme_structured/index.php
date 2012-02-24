@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 
 	<?php if (!$paged) { include ( TEMPLATEPATH . '/includes/featured-slider.php' ); } ?>
