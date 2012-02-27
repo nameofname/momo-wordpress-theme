@@ -131,12 +131,11 @@ function Momofuku_content_nav( $nav_id ) {
 
 	?>
 	<nav id="<?php echo $nav_id; ?>">
-		<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', 'Momofuku' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'Momofuku' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'Momofuku' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', 'previos' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', 'next'); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -223,7 +222,7 @@ if ( ! function_exists( 'Momofuku_posted_on' ) ) :
  * @since Momofuku 1.2
  */
 function Momofuku_posted_on() {
-	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'Momofuku' ),
+	printf( __( '<time class="entry-date" datetime="%3$s" pubdate>%4$s</time><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'Momofuku' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),

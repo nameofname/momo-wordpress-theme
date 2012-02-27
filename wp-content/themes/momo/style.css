@@ -32,7 +32,7 @@ html, body {
     color: #4C4C4C; 
 }
 
-p, ul, ol, h1, h2, h3, label, td, input {
+p, ul, ol, label, td, input {
     font-size: 13px; 
 }
 
@@ -136,11 +136,10 @@ p, ul, ol, h1, h2, h3, label, td, input {
 #access li {
 	float: left;
 	position: relative;
+  padding: 5px 10px; 
 }
 #access a {
 	display: block;
-	line-height: 2em;
-	padding: 0 1em;
 	text-decoration: none;
 }
 #access ul ul {

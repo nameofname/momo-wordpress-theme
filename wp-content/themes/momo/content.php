@@ -47,8 +47,10 @@
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'Momofuku' ), __( '1 Comment', 'Momofuku' ), __( '% Comments', 'Momofuku' ) ); ?></span>
+		<?php 
+    $comments_num = get_comments_number(); 
+    if ( comments_open() || ( !($comments_num == '0') && ! comments_open() ) ) : ?>
+        <span class="comments-number"><?php comments_number('0 Comments'); ?></span>
 		<?php endif; ?>
 
 	</footer><!-- #entry-meta -->

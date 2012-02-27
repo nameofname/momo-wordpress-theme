@@ -77,8 +77,9 @@
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'Momofuku' ), __( '1 Comment', 'Momofuku' ), __( '% Comments', 'Momofuku' ) ); ?></span>
-		<span class="sep"> | </span>
+        <span class="comments-number">
+        <?php comments_number('0 Comments'); ?>
+        </span>
 		<?php endif; ?>
 
 		<?php edit_post_link( __( 'Edit', 'Momofuku' ), '<span class="edit-link">', '</span>' ); ?>

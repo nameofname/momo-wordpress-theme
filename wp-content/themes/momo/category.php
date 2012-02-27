@@ -24,8 +24,6 @@ get_header(); ?>
 					?>
 				</header>
 
-				<?php Momofuku_content_nav( 'nav-above' ); ?>
-
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 

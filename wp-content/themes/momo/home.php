@@ -17,8 +17,6 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php Momofuku_content_nav( 'nav-above' ); ?>
-
 				<?php 
                                 $home_page_loop_num = 0; 
                                 while ( have_posts() ) : the_post(); 

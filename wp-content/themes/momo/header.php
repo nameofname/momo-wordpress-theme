@@ -67,6 +67,12 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
+<?php 
+    // Store user info in the global variable $current_users
+    global $current_user;
+    get_currentuserinfo(); 
+?>
+
 <?php wp_head(); ?>
 </head>
 
@@ -78,21 +84,26 @@
 			<h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <nav id="access" role="navigation">
                 <?php 
-                    // wp_nav_menu( array( 'theme_location' => 'primary' ) ); 
-                ?>
-                    <?php 
-                        $blinfo = get_bloginfo('url'); 
-                        $logout_url = wp_logout_url(); 
+                    $blinfo = get_bloginfo('url'); 
+                    $logout_url = wp_logout_url(); 
+                    $username = $current_user->user_nicename; 
+                    if(is_user_logged_in() && current_user_can('administrator')) {
                         $toolbar = "
                             <ul>
                                 <li><a href='$blinfo/wp-admin/post-new.php' title='Contribute'>New post</a></li>
                                 <li><a href='$logout_url' title='Logout'>Logout</a></li>
+                                <li>Hello $username</li>
                             </ul>
                         "; 
-                        if(is_user_logged_in() && current_user_can('administrator')) {
-                            echo $toolbar; 
-                        }
-                    ?>
+                    } else {
+                        $toolbar = "
+                            <ul>
+                                <li><a href='$logout_url' title='Logout'>Logout</a></li>
+                            </ul>
+                        "; 
+                    }
+                        echo $toolbar; 
+                ?>
             </nav><!-- #access -->
 		</hgroup>
 
