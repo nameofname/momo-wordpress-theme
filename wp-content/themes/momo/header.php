@@ -7,7 +7,15 @@
  * @package Momofuku
  * @since Momofuku 0.1
  */
-?><!DOCTYPE html>
+?>
+
+<?php
+    if ( !is_user_logged_in() ) {
+        wp_redirect('/wp-admin'); 
+    } 
+?> 
+
+<!DOCTYPE html>
 <!--[if IE 6]>
 <html id="ie6" <?php language_attributes(); ?>>
 <![endif]-->
@@ -46,7 +54,14 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
+<?php wp_enqueue_script('jquery_theme', get_template_directory_uri() . '/js/jquery-1.7.1.min.js'); ?>
+<?php if ( is_singular() && get_option( 'thread_comments' ) ) {
+    wp_enqueue_script('single_theme', get_template_directory_uri() . '/js/single.js'); 
+    wp_enqueue_script( 'comment-reply' ); 
+}?>
+<?php if ( is_home() ) wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js'); ?>           
+<?php //wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js');            
+?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -62,10 +77,22 @@
 		<hgroup>
 			<h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <nav id="access" role="navigation">
-                <h1 class="assistive-text section-heading"><?php _e( 'Main menu', 'Momofuku' ); ?></h1>
-                <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'Momofuku' ); ?>"><?php _e( 'Skip to content', 'Momofuku' ); ?></a></div>
-    
-                <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                <?php 
+                    // wp_nav_menu( array( 'theme_location' => 'primary' ) ); 
+                ?>
+                    <?php 
+                        $blinfo = get_bloginfo('url'); 
+                        $logout_url = wp_logout_url(); 
+                        $toolbar = "
+                            <ul>
+                                <li><a href='$blinfo/wp-admin/post-new.php' title='Contribute'>New post</a></li>
+                                <li><a href='$logout_url' title='Logout'>Logout</a></li>
+                            </ul>
+                        "; 
+                        if(is_user_logged_in() && current_user_can('administrator')) {
+                            echo $toolbar; 
+                        }
+                    ?>
             </nav><!-- #access -->
 		</hgroup>
 

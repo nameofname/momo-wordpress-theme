@@ -13,8 +13,8 @@
  */
 
 get_header(); ?>
-
 <?php get_sidebar(); ?>
+
 		<div id="primary">
 			<div id="content" role="main">
 

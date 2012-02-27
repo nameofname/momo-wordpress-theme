@@ -223,7 +223,7 @@ if ( ! function_exists( 'Momofuku_posted_on' ) ) :
  * @since Momofuku 1.2
  */
 function Momofuku_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'Momofuku' ),
+	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'Momofuku' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -309,12 +309,45 @@ add_filter( 'attachment_link', 'Momofuku_enhanced_image_navigation' );
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Momofuku.
  */
 
-function momo_home_js() {
-    wp_enqueue_script('jquery_theme', get_template_directory_uri() . '/js/jquery-1.7.1.min.js');            
-    wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js');            
-}    
- 
-add_action('wp_enqueue_scripts', 'momo_home_js'); // For use on the Front end (ie. Theme)
+/**
+ * Gets comments for a given post.  For use on category, archive, home pages.  EG. not for use 
+ * on single page, where you can just use the comments template. 
+ * Accepts: 
+ * 
+ * @param type $post_id // the id of the post you want to get comments for
+ * @param type $number // the max number of comments you want.  Defaults to infinite. 
+ * 
+ * @return string // Returns formatted comments, in div tags. 
+ */
+function get_post_comments($post_id, $number) {
+    $args = array(
+        'post_id'=>$post_id, 
+        'number'=>$number, 
+    ); 
+    $comments = get_comments($args); 
+    $comment_output = ''; 
+    foreach ($comments as $comment) {
+        //print_r($comment); exit; 
+        $comment_output .= "<div class='short-comment'>"; 
+        $comment_output .= "<span class='short-comment-author'>$comment->comment_author</span>"; 
+        $comment_output .= "<span class='short-comment-date'>$comment->comment_date</span>"; 
+        $comment_output .= "<p class='short-comment-content'>$comment->comment_content</p>"; 
+        $comment_output .= "</div>"; 
+    }
+//    echo '<pre>'; print_r($comments); 
+    return $comment_output; 
+}
+
+function momo_comments_form() {
+    if ( comments_open() || '0' != get_comments_number() ) {
+        $args = array(
+          'comment_notes_after'=>'<span class="show-form-allowed">about comments+</span><p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>', 
+          'logged_in_as'=>'',
+          'title_reply'=>'',
+        ); 
+        comment_form($args); 
+    }
+}
 
 
 ?>

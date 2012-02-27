@@ -7,22 +7,22 @@
  */
 
 get_header(); ?>
+<?php get_sidebar(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php Momofuku_content_nav( 'nav-above' ); ?>
-
 				<?php get_template_part( 'content', 'single' ); ?>
 
 				<?php Momofuku_content_nav( 'nav-below' ); ?>
 
 				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template( '', true );
+					// Spit out all comments (get all when you pass null instead of a number 
+          // AND dump the commenting form. 
+          echo get_post_comments($post->ID, null); 
+          momo_comments_form(); 
 				?>
 
 			<?php endwhile; // end of the loop. ?>
@@ -30,5 +30,4 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

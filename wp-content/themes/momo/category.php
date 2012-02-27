@@ -8,6 +8,7 @@
 
 get_header(); ?>
 
+<?php get_sidebar(); ?>
 		<section id="primary">
 			<div id="content" role="main">
 
@@ -20,8 +21,6 @@ get_header(); ?>
 
 					<?php
 						$category_description = category_description();
-						if ( ! empty( $category_description ) )
-							echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
 					?>
 				</header>
 
@@ -36,6 +35,7 @@ get_header(); ?>
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
 						get_template_part( 'content', get_post_format() );
+            echo get_post_comments($post->ID, 3); 
 					?>
 
 				<?php endwhile; ?>
@@ -60,5 +60,4 @@ get_header(); ?>
 			</div><!-- #content -->
 		</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

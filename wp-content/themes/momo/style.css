@@ -1,10 +1,9 @@
 /*
 Theme Name: Momofuku
-Theme URI: http://wordpress.org/extend/themes/Momofuku
-Author: Automattic
-Author URI: http://automattic.com/
-Description: A semantic, HTML5, canvas for CSS artists and an ultra-minimal set of super-clean templates for your own WordPress theme development.
-Version: 1.4
+Author: Ronald V. Williams
+Author URI: http://ronaldvwilliams.com/
+Description: An adaptation of the "Toolbox" theme found here: http://wordpress.org/extend/themes/toolbox.  Huge thanks go out to this theme's author. It originated as an ultra paired down theme with light CSS to be adapted by the author.  I have re-arranged some of the layouts, and added some functionality to suit the needs of Momofuku's blog project
+Version: 1.0
 License: GNU General Public License
 License URI: license.txt
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -14,30 +13,56 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 /* =Structure
+
+Please note- 
+    primary = the main content area
+    secondary = the sidebar
+(it's just easier not to change at this point)
+
 -------------------------------------------------------------- */
+
+* {
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+}
+
+html, body {
+    font-family: helvetica, arial, sans-serif; 
+    color: #4C4C4C; 
+}
+
+p, ul, ol, h1, h2, h3, label, td, input {
+    font-size: 13px; 
+}
 
 #page {
 	display: block;
-	margin: 1em;
+	margin: 15px;
 }
-#primary {
-	float: left;
-	width: 740px;
-        position: relative; 
-}
-#content {
-    
-}
+
 #header {
 	width: 100%; 
 	height: 80px; 
         min-width: 600px; 
+/*        -webkit-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);*/
 }
-#main .widget-area {
+
+#secondary {
 	float: left;
 	overflow: hidden;
-	width: 220px;
+	width: 200px;
+  margin-right: 20px; 
 }
+
+#primary {
+    float: left;
+    width: 740px;
+    position: relative; 
+}
+
 #colophon {
 	clear: both;
 	display: block;
@@ -366,7 +391,17 @@ article.comment {
 	display: block;
 	margin: 0 0 1em;
 	width: 80%;
+        border: 1px solid #ccc; 
 }
+
+.form-allowed-tags{
+    display: none; 
+}
+
+.show-form-allowed {
+    cursor: pointer; 
+}
+
 #respond .form-allowed-tags {
 	clear: both;
 	width: 80%;
@@ -402,18 +437,67 @@ article.comment {
 	width: 740px;
         position: relative; 
 }
-
-#home .entry-content {
-    height: 100px; 
-    overflow: hidden; 
-    position: relative; 
+#main {
+    float: left; 
 }
 
-.expand {
+#main .entry-content, 
+#home .entry-content {
+    position: relative;
+    margin-bottom: 15px; 
+}
+
+#home .entry-content {
+    height: 92px; 
+    overflow: hidden; 
+}
+
+.expand, 
+.collapse {
     width: 15px; 
     height: 15px; 
-    background-color: red; 
     position: absolute;
     bottom: 10px; 
     right: 10px; 
 }
+
+.collapse {
+    background-color: red; 
+}
+
+.expand {
+    background-color: blue; 
+}
+
+article {
+    margin-bottom: 20px; 
+}
+
+
+.short-comment {
+    margin: 10px 0px; 
+}
+
+.short-comment .short-comment-author {
+    margin-right: 10px; 
+}
+
+.short-comment .short-comment-date {
+    font-size: 10px; 
+}
+
+.post {
+    position: relative; 
+}
+
+.post .edit-link {
+    display: block; 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    width: 25px; 
+    height: 15px; 
+    border: 1px solid red; 
+}
+
+
