@@ -32,7 +32,7 @@ html, body {
     color: #4C4C4C; 
 }
 
-p, ul, ol, label, td, input {
+p, ul, ol, label, td, input, span, time {
     font-size: 13px; 
 }
 
@@ -515,5 +515,6 @@ article {
     background-color: red; 
     width: 15px; 
     height: 15px; 
+    cursor: pointer; 
 }
 
