@@ -47,11 +47,8 @@
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php 
-    $comments_num = get_comments_number(); 
-    if ( comments_open() || ( !($comments_num == '0') && ! comments_open() ) ) : ?>
-        <span class="comments-number"><?php comments_number('0 Comments'); ?></span>
-		<?php endif; ?>
+		<?php momo_comments_number(); ?>
+    <?php momo_comments_form(); ?>
 
 	</footer><!-- #entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

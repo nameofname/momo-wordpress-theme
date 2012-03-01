@@ -134,7 +134,7 @@ function Momofuku_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', 'previos' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', 'previous' ); ?>
 		<?php next_post_link( '<div class="nav-next">%link</div>', 'next'); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
@@ -343,10 +343,38 @@ function momo_comments_form() {
           'comment_notes_after'=>'<span class="show-form-allowed">about comments+</span><p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>', 
           'logged_in_as'=>'',
           'title_reply'=>'',
+          'id_form' => '', 
         ); 
         comment_form($args); 
     }
 }
+
+function momo_comments_number() {
+		if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) {
+        $cn = comments_number('0 Comments');
+        $out = "<span class='comments-number'>$cn</span>"; 
+		}
+    return $out; 
+
+}
+
+/**
+ * REDIRECT ALL USERS TO THE HOME PAGE INSTEAD OF THE ADMIN SCREEN WHEN THEY LOG IN
+ * UNLESS THEY ARE ADMINISTRATOR!!!!!!!!!!!!!!!!
+ */
+function momo_login_redirect($redirect_to, $request, $user)
+{
+	//is there a user to check?
+	if(is_array($user->roles))
+	{
+		//check for admins
+		if(in_array("administrator", $user->roles))		
+			return home_url("/wp-admin/");
+		else
+			return home_url();
+	}
+}
+add_filter("login_redirect", "momo_login_redirect", 10, 3);
 
 
 ?>

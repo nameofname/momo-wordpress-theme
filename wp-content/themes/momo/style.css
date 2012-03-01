@@ -126,7 +126,6 @@ p, ul, ol, label, td, input {
 	display: block;
 	float: right;
 	margin: 0 auto 1em;
-	width: 250px;
 }
 #access ul {
 	list-style: none;
@@ -382,11 +381,11 @@ textarea {
 article.comment {
 	display: block;
 }
-#respond input[type=text] {
+.respond input[type=text] {
 	display: block;
 	width: 60%;
 }
-#respond textarea {
+.respond textarea {
 	display: block;
 	margin: 0 0 1em;
 	width: 80%;
@@ -401,11 +400,11 @@ article.comment {
     cursor: pointer; 
 }
 
-#respond .form-allowed-tags {
+.respond .form-allowed-tags {
 	clear: both;
 	width: 80%;
 }
-#respond .form-allowed-tags code {
+.respond .form-allowed-tags code {
 	display: block;
 }
 
@@ -499,4 +498,22 @@ article {
     border: 1px solid red; 
 }
 
+.curr_cat a {
+    font-weight: bold; 
+}
+
+#categories li a {
+    text-decoration: none; 
+}
+
+.comments_home_hide .respond {
+    display: none; 
+}
+
+.comments_home_show_btn {
+    display: inline-block; 
+    background-color: red; 
+    width: 15px; 
+    height: 15px; 
+}
 

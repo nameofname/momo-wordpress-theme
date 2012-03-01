@@ -14,9 +14,14 @@ function get_sidebar_cat_links() {
     $cats = get_categories(); 
     $output = ''; 
     foreach ($cats as $cat) {
+        $cat_flag = in_category($cat->term_id) ? 'curr_cat' : NULL; 
         $link = get_category_link($cat->term_id); 
         $name = $cat->category_description; 
-        $output .= "<li><a href='$link'>$name</a></li>"; 
+        if ($cat_flag) { 
+            $output .= "<li class='$cat_flag'><a href='$link'>$name</a></li>"; 
+        } else {
+            $output .= "<li><a href='$link'>$name</a></li>"; 
+        }
     }
     return $output; 
 }

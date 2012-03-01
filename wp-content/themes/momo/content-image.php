@@ -21,12 +21,9 @@
 
 	<footer class="entry-meta">
 		<?php Momofuku_posted_on(); ?>
-		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
 		<span class="sep"> | </span>
-    <span class="comments-number">
-    <?php comments_number('0 Comments'); ?>
-    </span>
-		<?php endif; ?>
+		<?php momo_comments_number(); ?>
+
 		<?php edit_post_link( __( 'Edit', 'Momofuku' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 	</footer><!-- #entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

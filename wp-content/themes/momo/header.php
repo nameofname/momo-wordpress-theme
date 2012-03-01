@@ -9,6 +9,16 @@
  */
 ?>
 
+<?php 
+    // Store user info in the global variable $current_users
+    global $wp_roles; // Global var for user's role. 
+    global $current_user; // Global user info. 
+    get_currentuserinfo(); 
+    /* Disable the Admin Bar. */
+    show_admin_bar(false); 
+?>
+ 
+
 <?php
     if ( !is_user_logged_in() ) {
         wp_redirect('/wp-admin'); 
@@ -67,13 +77,16 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
-<?php 
-    // Store user info in the global variable $current_users
-    global $current_user;
-    get_currentuserinfo(); 
-?>
-
 <?php wp_head(); ?>
+<!--SUPER HACKY FIX:: 
+The real solution to hide the admin bar is to call show_admin_bar(false), but Wordpress was still outputting 
+the margin-top 28px on html tag.  wtf? (v. 3.3.1)
+-->
+<style type="text/css">
+html{
+    margin-top: 0px!important; 
+}
+</style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -87,17 +100,18 @@
                     $blinfo = get_bloginfo('url'); 
                     $logout_url = wp_logout_url(); 
                     $username = $current_user->user_nicename; 
-                    if(is_user_logged_in() && current_user_can('administrator')) {
+                    if(is_user_logged_in() && (current_user_can('administrator')) | current_user_can('author')) {
                         $toolbar = "
                             <ul>
+                                <li>Hello $username</li>
                                 <li><a href='$blinfo/wp-admin/post-new.php' title='Contribute'>New post</a></li>
                                 <li><a href='$logout_url' title='Logout'>Logout</a></li>
-                                <li>Hello $username</li>
                             </ul>
                         "; 
                     } else {
                         $toolbar = "
                             <ul>
+                                <li>Hello $username</li>
                                 <li><a href='$logout_url' title='Logout'>Logout</a></li>
                             </ul>
                         "; 
