@@ -377,4 +377,95 @@ function momo_login_redirect($redirect_to, $request, $user)
 add_filter("login_redirect", "momo_login_redirect", 10, 3);
 
 
+
+
+
+
+
+
+
+
+
+/**
+ * Function to set the output of the hero banner admin page. 
+ */
+add_action('admin_menu', 'momo_hero_admin');
+
+function momo_hero_admin() {
+    // Is "manage_options" the best permissions level for this? Should I be using "administrator" ???
+    if (current_user_can('manage_options'))  {
+//        wp_die( __('You do not have sufficient permissions to access this page.') );
+        add_theme_page('Momofuku Hero Banner admin', 'Momofuku Hero Banner', 'manage_options', 'momo-hero-banner', 'momo_hero_banner_admin');
+    }
+}
+
+function momo_hero_banner_admin() {
+    add_option("momo_hero_banner", '', '', 'yes');
+
+    if (isset($_FILES['file'])) {
+        echo '<pre>THERE ARE FILES IN YOUR COMPUTER!'; print_r($_FILES); 
+    } else {
+        echo 'NOOOOOOO NO FILEZZZZZ!!!!!!!!! AAAAAAAHHHH!!!'; 
+    }
+    // Check whether a file was submitted via form. 
+    if ($_FILES['file']) {
+        $upload = $_FILES['file']; //Receive the uploaded image from form
+        // upload file, and get back upload path. 
+        $file_path = add_hero_banner($upload); 
+    } else {
+    $currbanner = get_option(momo_hero_banner); 
+    update_option('momo_hero_banner', $file_path); 
+    $out = ''; 
+    if ($currbanner != '') {
+    $out /= '<h1>Current Image: </h1> <img src="" alt="Current Image." /> ';
+    }
+    $out .= '
+        <form id="Upload" enctype="multipart/form-data" method="post"> 
+        <h1>Upload a new Momofuku Hero Banner. </h1> 
+        <input type="hidden" name="MAX_FILE_SIZE" value="3000"> 
+        <label for="file">File to upload:</label> 
+        <input id="file" type="file" name="file"> 
+        <input id="submit" type="submit" name="submit" value="Submit"> 
+        </form> '; 
+        echo $out; 
+    }
+}
+
+function add_hero_banner($upload)
+{
+ $uploads = wp_upload_dir(); /*Get path of upload dir of wordpress*/
+ 
+ if (is_writable($uploads['path']))  /*Check if upload dir is writable*/
+ { 
+  if ((!empty($upload['tmp_name'])))  /*Check if uploaded image is not empty*/
+  {
+   if ($upload['tmp_name'])   /*Check if image has been uploaded in temp directory*/
+   { 
+    $file=handle_image_upload($upload); /*Call our custom function to ACTUALLY upload the image*/
+
+   }
+  }
+ }
+ return 'the path tothe imaage'; 
+}
+
+function handle_image_upload($upload)
+{
+ global $post;
+        
+        if (file_is_displayable_image( $upload['tmp_name'] )) /*Check if image*/
+        {
+    /*handle the uploaded file*/
+            $overrides = array('test_form' => false);
+            $file=wp_handle_upload($upload, $overrides);
+        }
+ return $file;
+}
+
+
+
+
+
+
 ?>
+

@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     // For truncated content on the home page - When the user clicks the 
     // expand button, expand to the height of the content, 
