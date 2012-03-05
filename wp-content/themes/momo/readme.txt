@@ -1,20 +1,36 @@
-== Changelog ==
+==========================================================
+==========================================================
+This is where the magic happens. Other than a few changes
+to the commenting form in wp-includes, this is just a 
+retular wordpress install.  (I have included the whole 
+wordpress code base here in case I make other changes 
+to includes).  
 
-= 1.4 - Jan 6 2012 =
-* The comments disabled notice should show up on posts and pages only if there are comments AND comments are disabled
-* Bugfix: filtering attachment link URLs that don't have pretty permalinks will cause a 404 when viewing an unattached attachment
-* Fix @package and @subpackage information
-* Add generic action-hooks to header and sidebar
-* Add max-width to wp-caption to prevent overflow
-* Support older self-hosted installs with is_multi_author function check
+The theme basically transforms your website into a gated
+site. All users must have a login, and that login has 
+to be created by the administrator. Read on to find out
+more about the theme's capabilities: 
 
-= 1.3 - Oct 5 2011 =
-* Make the comment markup in our callback switch the default markup for any new comment types following Twenty Eleven's example
-* Add in a content id attribute to the image navigation links for a better user experience
-* the_post should always be called in the loop
-* Set svn:eol-style on JS and TXT files
-* Fix get_the_author() escaping
-* Add in the older section-heading class for backwards compatibility
-* Trim whitespace
-* TEMPLATEPATH to get_template_directory()
-* Add POT file
+What this theme does. 
+1) Create a home page, 
+2) Category pages based on your wordpress categories, 
+3) An admin page to control the hero banner, 
+4) Nice commenting capabilities from the home page, cat 
+pages, and single pages
+5) Some slick JQuery to show and hide forms
+6) Generally be awesome.
+7) There are some particular rules around permissions in 
+this theme, it assumes no view access to members who are 
+not registered with the site, but this should be easy to 
+change. 
+  - When the user reaches the login page, they log in to 
+  site, not to the wordpress admin screen
+  - The wordpress toolbar should be removed from the top 
+  of the page for all users who are not admin. 
+  - The 3 user levels I use are: 
+    1- Administrator // Has access to all wordpress admin
+    2- Author  // Create posts and comment
+    3- Subscriber // view and comment only 
+
+==========================================================
+==========================================================
