@@ -326,14 +326,12 @@ function get_post_comments($post_id, $number) {
     $comments = get_comments($args); 
     $comment_output = ''; 
     foreach ($comments as $comment) {
-        //print_r($comment); exit; 
         $comment_output .= "<div class='short-comment'>"; 
         $comment_output .= "<span class='short-comment-author'>$comment->comment_author</span>"; 
         $comment_output .= "<span class='short-comment-date'>$comment->comment_date</span>"; 
         $comment_output .= "<p class='short-comment-content'>$comment->comment_content</p>"; 
         $comment_output .= "</div>"; 
     }
-//    echo '<pre>'; print_r($comments); 
     return $comment_output; 
 }
 
@@ -377,15 +375,6 @@ function momo_login_redirect($redirect_to, $request, $user)
 add_filter("login_redirect", "momo_login_redirect", 10, 3);
 
 
-
-
-
-
-
-
-
-
-
 /**
  * Function to set the output of the hero banner admin page. 
  */
@@ -401,71 +390,91 @@ function momo_hero_admin() {
 
 function momo_hero_banner_admin() {
     add_option("momo_hero_banner", '', '', 'yes');
-
-    if (isset($_FILES['file'])) {
-        echo '<pre>THERE ARE FILES IN YOUR COMPUTER!'; print_r($_FILES); 
-    } else {
-        echo 'NOOOOOOO NO FILEZZZZZ!!!!!!!!! AAAAAAAHHHH!!!'; 
+    if (isset($_POST)){
+        if ($_POST['remove'] == 'on') {
+            update_option('momo_hero_banner', ''); 
+            echo '<h1>Hero banner has been removed. </h1>'; 
+            return true; 
+        }
     }
     // Check whether a file was submitted via form. 
     if ($_FILES['file']) {
         $upload = $_FILES['file']; //Receive the uploaded image from form
         // upload file, and get back upload path. 
-        $file_path = add_hero_banner($upload); 
+        $file = add_hero_banner($upload); 
+        //echo '<pre>'; print_r($file_path); exit; 
+        if (is_array($file)) {
+            $file_path = $file['url']; 
+            update_option('momo_hero_banner', $file_path); 
+            echo '<h1>Your hero banner has been updated.</h1>'; 
+            return true; 
+        } else { // Some basic error handling for bad uploads. 
+            echo 'There was a problem uploading your file: '; 
+            switch ($file) {
+                case 'tmp_failed': 
+                    echo 'The file could not be uploaded to the tmp directory. Please verify you have the correct (server side) permissions'; break; 
+                case 'already_exists': 
+                    echo 'This file already exists. '; break; 
+                case 'not_writable': 
+                    echo 'The uploads directory is not writeable. Please change permissions '; 
+            }
+        }
     } else {
-    $currbanner = get_option(momo_hero_banner); 
-    update_option('momo_hero_banner', $file_path); 
-    $out = ''; 
-    if ($currbanner != '') {
-    $out /= '<h1>Current Image: </h1> <img src="" alt="Current Image." /> ';
-    }
-    $out .= '
-        <form id="Upload" enctype="multipart/form-data" method="post"> 
-        <h1>Upload a new Momofuku Hero Banner. </h1> 
-        <input type="hidden" name="MAX_FILE_SIZE" value="3000"> 
-        <label for="file">File to upload:</label> 
-        <input id="file" type="file" name="file"> 
-        <input id="submit" type="submit" name="submit" value="Submit"> 
-        </form> '; 
+        $currbanner = get_option(momo_hero_banner); 
+        $out = ''; 
+        if ($currbanner != '') {
+            $out /= '<h1>Current Image: </h1> <img src="" alt="Current Image." /> ';
+        }
+        $out .= '
+            <form id="momo_upload_form" enctype="multipart/form-data" method="post"> 
+            <h1>Manage Momofuku home page banner. </h1> 
+            <p>Note: The correct width for a hero banner is 740px. Any image you upload here will automatically be resized to 740px, but for best performance use the correct width. </p>
+            <!--<input type="hidden" name="MAX_FILE_SIZE" value="3000">!--> 
+            <div>
+            <label for="file">File to upload:</label> 
+            <input id="file" type="file" name="file"> 
+            </div>
+            <div>
+            <label for="remove">Remove hero banner: </label> 
+            <input id="remove" type="checkbox" name="remove"> 
+            </div>
+            <input id="submit" type="submit" name="submit" value="Submit"> 
+            </form> ';
+        $file_dir=get_bloginfo('template_directory'); 
+        wp_enqueue_style("functions", $file_dir."/functions.css", false, "1.0", "all");  
         echo $out; 
     }
 }
 
-function add_hero_banner($upload)
-{
- $uploads = wp_upload_dir(); /*Get path of upload dir of wordpress*/
- 
- if (is_writable($uploads['path']))  /*Check if upload dir is writable*/
- { 
-  if ((!empty($upload['tmp_name'])))  /*Check if uploaded image is not empty*/
-  {
-   if ($upload['tmp_name'])   /*Check if image has been uploaded in temp directory*/
-   { 
-    $file=handle_image_upload($upload); /*Call our custom function to ACTUALLY upload the image*/
-
-   }
-  }
- }
- return 'the path tothe imaage'; 
-}
-
-function handle_image_upload($upload)
-{
- global $post;
-        
-        if (file_is_displayable_image( $upload['tmp_name'] )) /*Check if image*/
-        {
-    /*handle the uploaded file*/
-            $overrides = array('test_form' => false);
-            $file=wp_handle_upload($upload, $overrides);
+function add_hero_banner($upload){
+//    echo '<pre>'; print_r($upload); exit; 
+    $uploads = wp_upload_dir(); //Get path of upload dir of wordpress
+    if (is_writable($uploads['path'])) {//Check if upload dir is writable 
+        if ((!empty($upload['tmp_name']))) {  //Check if uploaded image is not empty
+            if ($upload['tmp_name']) { //Check if image has been uploaded in temp directory
+                $file=handle_image_upload($upload); /*Call our custom function to ACTUALLY upload the image*/
+            } else {
+                $file = 'tmp_failed'; 
+            }
+        } else {
+            $file = 'already_exists'; 
         }
- return $file;
+    }
+    else {
+        $file = 'not_writable'; 
+    }
+    return $file; 
 }
 
-
-
-
-
+function handle_image_upload($upload){
+    global $post;
+    if (file_is_displayable_image( $upload['tmp_name'] )) {//Check if image
+        //handle the uploaded file
+        $overrides = array('test_form' => false);
+        $file=wp_handle_upload($upload, $overrides);
+    }
+    return $file;
+}
 
 ?>
 

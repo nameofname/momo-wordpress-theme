@@ -41,17 +41,17 @@ function get_sidebar_page_links() {
     return $output; 
 }
 ?>
-		<div id="secondary" class="widget-area" role="complementary">
+<div id="secondary" class="widget-area" role="complementary">
 
-                    <aside id="categories" class="widget">
-                            <h1 class="widget-title"><?php _e( 'Categories', 'Momofuku' ); ?></h1>
-                            <ul>
-                                <li><a href="/">Home</a>
-                                <?php echo get_sidebar_cat_links() ?>
-                            </ul>
-                            <?php 
-                                echo get_sidebar_page_links(); 
-                            ?>
-                    </aside>
+                <aside id="categories" class="widget">
+                        <h1 class="widget-title"><?php _e( 'Categories', 'Momofuku' ); ?></h1>
+                        <ul>
+                            <li><a href="/">Home</a>
+                            <?php echo get_sidebar_cat_links() ?>
+                        </ul>
+                        <?php 
+                            echo get_sidebar_page_links(); 
+                        ?>
+                </aside>
 
-		</div>
+</div>

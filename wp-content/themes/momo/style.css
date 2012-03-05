@@ -127,16 +127,32 @@ p, ul, ol, label, td, input, span, time {
 	float: right;
 	margin: 0 auto 1em;
 }
+
 #access ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    height: 25px; 
 }
+
+#access form {
+    display: none; 
+}
+
+.nav_search {
+    cursor: pointer; 
+}
+
 #access li {
 	float: left;
 	position: relative;
   padding: 5px 10px; 
 }
+
+.nav_search {
+    width: 45px; 
+}
+
 #access a {
 	display: block;
 	text-decoration: none;
@@ -506,7 +522,7 @@ article {
     text-decoration: none; 
 }
 
-.comments_home_hide .respond {
+.comments_home_hide {
     display: none; 
 }
 
@@ -518,3 +534,6 @@ article {
     cursor: pointer; 
 }
 
+#momo_hero_banner {
+    width: 740px; 
+}

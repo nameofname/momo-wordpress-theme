@@ -55,7 +55,10 @@
         <?php momo_comments_number(); ?>
         <span class="comments_home_show_btn"></span>
         <div class="comments_home_hide">
-            <?php momo_comments_form(); ?>
+            <?php 
+                echo get_post_comments($post->ID, null); 
+                momo_comments_form(); 
+            ?>
         </div> 
 
 		<?php edit_post_link( __( 'Edit', 'Momofuku' ), '<span class="edit-link">', '</span>' ); ?>

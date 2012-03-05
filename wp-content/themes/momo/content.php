@@ -47,8 +47,5 @@
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php momo_comments_number(); ?>
-    <?php momo_comments_form(); ?>
-
 	</footer><!-- #entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

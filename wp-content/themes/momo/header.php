@@ -66,12 +66,9 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <?php wp_enqueue_script('jquery_theme', get_template_directory_uri() . '/js/jquery-1.7.1.min.js'); ?>
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) {
-    wp_enqueue_script('single_theme', get_template_directory_uri() . '/js/single.js'); 
     wp_enqueue_script( 'comment-reply' ); 
 }?>
-<?php if ( is_home() ) wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js'); ?>           
-<?php //wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js');            
-?>
+<?php wp_enqueue_script('home_js', get_template_directory_uri() . '/js/site.js'); ?>           
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -106,17 +103,20 @@ html{
                                 <li>Hello $username</li>
                                 <li><a href='$blinfo/wp-admin/post-new.php' title='Contribute'>New post</a></li>
                                 <li><a href='$logout_url' title='Logout'>Logout</a></li>
-                            </ul>
+                                <li class='nav_search'>Search+</li>
                         "; 
                     } else {
                         $toolbar = "
                             <ul>
                                 <li>Hello $username</li>
                                 <li><a href='$logout_url' title='Logout'>Logout</a></li>
-                            </ul>
+                                <li class='nav_search'>Search+</li>
                         "; 
                     }
-                        echo $toolbar; 
+                    $toolbar .= '</ul>'; 
+                    echo $toolbar; 
+                    get_search_form(); 
+
                 ?>
             </nav><!-- #access -->
 		</hgroup>

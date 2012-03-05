@@ -1,0 +1,16 @@
+
+#momo_upload_form p {
+    background-color: #FFFFF5; 
+    border: 1px solid #FCFFA1; 
+    margin-right: 20px; 
+    padding: 0px 5px; 
+}
+
+#momo_upload_form div {
+    background-color: #F5F5F5; 
+    border: 1px solid #D1D1D1; 
+    margin: 0px 20px 10px 0px; 
+    padding: 5px 5px; 
+}
+
+
