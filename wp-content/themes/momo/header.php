@@ -68,7 +68,8 @@
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' ); 
 }?>
-<?php wp_enqueue_script('home_js', get_template_directory_uri() . '/js/site.js'); ?>           
+<?php if (is_home()) wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js') ?>
+<?php wp_enqueue_script('site_js', get_template_directory_uri() . '/js/site.js'); ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -87,9 +88,8 @@ html{
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed">
 <?php do_action( 'before' ); ?>
-	<header id="header" role="banner">
+<header id="header" role="banner">
 		<hgroup>
 			<h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <nav id="access" role="navigation">
@@ -100,7 +100,7 @@ html{
                     if(is_user_logged_in() && (current_user_can('administrator')) | current_user_can('author')) {
                         $toolbar = "
                             <ul>
-                                <li>Hello $username</li>
+                                <li class='hello'><i>Hello $username</i></li>
                                 <li><a href='$blinfo/wp-admin/post-new.php' title='Contribute'>New post</a></li>
                                 <li><a href='$logout_url' title='Logout'>Logout</a></li>
                                 <li class='nav_search'>Search+</li>
@@ -108,7 +108,7 @@ html{
                     } else {
                         $toolbar = "
                             <ul>
-                                <li>Hello $username</li>
+                                <li class='hello'><i>Hello $username</i></li>
                                 <li><a href='$logout_url' title='Logout'>Logout</a></li>
                                 <li class='nav_search'>Search+</li>
                         "; 
@@ -121,6 +121,7 @@ html{
             </nav><!-- #access -->
 		</hgroup>
 
-	</header><!-- #branding -->
+</header><!-- #branding -->
 
+<div id="page" class="hfeed">
 	<div id="main">

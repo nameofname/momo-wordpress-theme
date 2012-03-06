@@ -29,7 +29,7 @@ function get_sidebar_page_links() {
     $pages = get_pages();
     $output = ''; 
     if(sizeof($pages)) {
-        $output .= "<h1 class='widget-title'>Pages</h1>"; 
+        $output .= "<h1 id='pages-header' class='widget-title'>Pages</h1>"; 
         $output .= '<ul>'; 
         foreach ($pages as $page) {
             $link = get_page_link($page->ID); 

@@ -29,9 +29,6 @@ get_header(); ?>
 
         <?php
             get_template_part( 'content', get_post_format() );
-            momo_comments_number(); 
-            echo get_post_comments($post->ID, 3); 
-            momo_comments_form(); 
         ?>
 
 				<?php endwhile; ?>

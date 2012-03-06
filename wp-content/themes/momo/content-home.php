@@ -23,7 +23,7 @@
 	<div class="entry-content">
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'Momofuku' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'Momofuku' ), 'after' => '</div>' ) ); ?>
-            <div class="expand"></div>
+            <div class="expand">...Read More</div>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
@@ -53,7 +53,7 @@
         <?php endif; // End if 'post' == get_post_type() ?>
 
         <?php momo_comments_number(); ?>
-        <span class="comments_home_show_btn"></span>
+        <span class="comments_home_show_btn">&#043;</span>
         <div class="comments_home_hide">
             <?php 
                 echo get_post_comments($post->ID, null); 

@@ -21,13 +21,6 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
-          <?php
-            // Spit out all comments (get all when you pass null instead of a number 
-            // AND dump the commenting form. 
-            echo get_post_comments($post->ID, null); 
-            momo_comments_form(); 
-          ?>
-
 				<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->

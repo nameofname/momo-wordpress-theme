@@ -18,13 +18,6 @@ get_header(); ?>
 
 				<?php Momofuku_content_nav( 'nav-below' ); ?>
 
-				<?php
-					// Spit out all comments (get all when you pass null instead of a number 
-          // AND dump the commenting form. 
-          echo get_post_comments($post->ID, null); 
-          momo_comments_form(); 
-				?>
-
 			<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
