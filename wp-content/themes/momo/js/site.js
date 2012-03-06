@@ -42,5 +42,13 @@ $(document).ready(function(){
         }
     });
 
+    $('.comment-form-comment textarea').focus(function(){
+        $(this).animate({'height' : '120px'})
+    }); 
+
+    $('.comment-form-comment textarea').blur(function(){
+        $(this).animate({'height' : '40px'})
+    }); 
+
 // End document.ready functions
 });
