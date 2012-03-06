@@ -14,7 +14,7 @@ function get_sidebar_cat_links() {
     $cats = get_categories(); 
     $output = ''; 
     foreach ($cats as $cat) {
-        $cat_flag = in_category($cat->term_id) ? 'curr_cat' : NULL; 
+        $cat_flag = is_category($cat->term_id) ? 'curr_cat' : NULL; 
         $link = get_category_link($cat->term_id); 
         $name = $cat->category_description; 
         if ($cat_flag) { 
@@ -34,7 +34,12 @@ function get_sidebar_page_links() {
         foreach ($pages as $page) {
             $link = get_page_link($page->ID); 
             $name = $page->post_title; 
-            $output .= "<li><a href='$link'>$name</a></li>"; 
+            $page_flag = is_page($page->ID) ? 'curr_cat' : NULL; 
+            if ($page_flag) {
+                $output .= "<li class='$page_flag'><a href='$link'>$name</a></li>"; 
+            } else {
+                $output .= "<li><a href='$link'>$name</a></li>"; 
+            }
         }
         $output .= '</ul>'; 
     }
@@ -46,7 +51,10 @@ function get_sidebar_page_links() {
                 <aside id="categories" class="widget">
                         <h1 class="widget-title"><?php _e( 'Categories', 'Momofuku' ); ?></h1>
                         <ul>
-                            <li><a href="/">Home</a>
+                            <?php 
+                                $home_flag = is_home() ? 'curr_cat' : NULL; 
+                            ?>
+                            <li class="<?php echo $home_flag ?>"><a href="/">Home</a>
                             <?php echo get_sidebar_cat_links() ?>
                         </ul>
                         <?php 

@@ -394,6 +394,10 @@ img.alignright {
 /* =Forms
 -------------------------------------------------------------- */
 
+#searchform  {
+    padding: 10px; 
+}
+
 #searchform label {
 	display: none;
 }
