@@ -1,5 +1,29 @@
 $(document).ready(function(){
-    // Pop down the hidden comments form on the home page. 
+    initCommentsInteractions(); 
+    initToggleNavSearch(); 
+    initNavExpand(); 
+
+// End document.ready functions
+});
+
+// Toggle display of the hidden comment forms, and add other interactions
+function initToggleNavSearch() {
+    $('.nav_search').data('expanded', false); 
+    $('.nav_search').on('click', function(){
+        if ($(this).data('expanded') == false) {
+            $('#access form').slideDown(500); 
+            $(this).data('expanded', true); 
+            $(this).text('Search-'); 
+        } else {
+            $('#access form').slideUp(500); 
+            $(this).data('expanded', false); 
+            $(this).text('Search+'); 
+        }
+    });
+}
+
+// Toggle display of the hidden comments form.
+function initCommentsInteractions() {
     $('.comments_home_show_btn').each(function(key, val){
         $(this).attr('data-toggle', 0); 
     });
@@ -15,20 +39,6 @@ $(document).ready(function(){
         num ++; 
         $(this).attr('data-toggle', num); 
     });
-
-    $('.nav_search').data('expanded', false); 
-    $('.nav_search').on('click', function(){
-        if ($(this).data('expanded') == false) {
-            $('#access form').slideDown(500); 
-            $(this).data('expanded', true); 
-            $(this).text('Search-'); 
-        } else {
-            $('#access form').slideUp(500); 
-            $(this).data('expanded', false); 
-            $(this).text('Search+'); 
-        }
-    });
-
     $('.show-form-allowed').data('expanded', false); 
     $('.show-form-allowed').on('click', function(){
         if ($(this).data('expanded') == false) {
@@ -49,6 +59,26 @@ $(document).ready(function(){
     $('.comment-form-comment textarea').blur(function(){
         $(this).animate({'height' : '40px'})
     }); 
+}
 
-// End document.ready functions
-});
+// Collapse and expand sub categories in the main navigation. 
+function initNavExpand() {
+    $('.cat-item').each(function(key, val){
+        if ($(this).children('.children').length > 0) {
+            var expander = $('<div>').attr('class','nav_expander nav_collapsed').data('tognum' , 0); 
+            $(this).find('a').first().after(expander); 
+        }
+    }); 
+    $('.nav_expander').live('click', function(){
+        $(this).next('.children').slideToggle(300); 
+        if ($(this).data('tognum') % 2 == 0) {
+            $(this).removeClass('nav_collapsed').addClass('nav_expanded');
+        } else {
+            $(this).removeClass('nav_expanded').addClass('nav_collapsed');
+        }
+        var num = $(this).data('tognum'); 
+        num ++; 
+        //$(this).data('tognum', num++); 
+        $(this).data('tognum', num); 
+    }); 
+}

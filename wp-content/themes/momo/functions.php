@@ -476,5 +476,56 @@ function handle_image_upload($upload){
     return $file;
 }
 
-?>
+/**
+ * @function momo_create_taxonomy - Create sub category and ingredient taxonomies for post categorization. 
+ */
+function momo_create_taxonomy() { // Add new "Locations" taxonomy to Posts 
+    register_taxonomy(
+        'sub-category', 
+        'post', array( // Hierarchical taxonomy (like categories) 
+            'hierarchical' => true, // This array of options controls the labels displayed in the WordPress Admin UI 
+            'labels' => array(
+                'name' => _x( 'Sub Categories', 'taxonomy general name' ), 
+                'singular_name' => _x( 'Sub Category', 'taxonomy singular name' ), 
+                'search_items' => __( 'Search Sub Categories' ), 
+                'all_items' => __( 'All Sub Categories' ), 
+                'parent_item' => __( 'Parent Sub Category' ), 
+                'parent_item_colon' => __( 'Parent Sub Category:' ), 
+                'edit_item' => __( 'Edit Sub Categories' ), 
+                'update_item' => __( 'Update Sub Category' ), 
+                'add_new_item' => __( 'Add New Sub Category' ), 
+                'new_item_name' => __( 'New Sub Category Name' ), 
+                'menu_name' => __( 'Sub Categories' ), 
+            ), // Control the slugs used for this taxonomy 
+            'rewrite' => array(
+                'slug' => 'sub-categories', // This controls the base slug that will display before each term 
+                'with_front' => false, // Don't display the category base before "/locations/" 
+                'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/" 
+            ), 
+        )
+    ); 
+} 
 
+add_action( 'init', 'momo_create_taxonomy', 0 );
+
+
+// CREATE CUSTOM WORDPRESS LOGIN SCREEN:::
+/**
+ * @desc attach custom admin login CSS file
+ */
+function momo_custom_login_css() {
+    $bloginfo = get_bloginfo('template_url'); 
+    echo '<link rel="stylesheet" type="text/css" href="' . $bloginfo . '/css/momo-login.css" />'; 
+    echo "<script src='$bloginfo/js/jquery-1.7.1.min' type='text/javascript'></script>"; 
+    echo "<script src='$bloginfo/js/momo-login.js' type='text/javascript'></script>"; 
+}
+ 
+add_action('login_head', 'momo_custom_login_css');
+
+
+
+
+
+
+
+?>

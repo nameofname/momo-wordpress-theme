@@ -52,11 +52,24 @@ function get_sidebar_page_links() {
                         <h1 class="widget-title"><?php _e( 'Categories', 'Momofuku' ); ?></h1>
                         <ul>
                             <?php 
-                                $home_flag = is_home() ? 'curr_cat' : NULL; 
+                                $home_flag = is_home() ? 'current-cat' : NULL; 
                             ?>
-                            <li class="<?php echo $home_flag ?>"><a href="/">Home</a>
-                            <?php echo get_sidebar_cat_links() ?>
+                            <li class="cat-item <?php echo $home_flag ?>"><a href="/">Home</a>
+                            <?php 
+                                //echo get_sidebar_cat_links() 
+                            ?>
                         </ul>
+                        <?php 
+                        $curr_cat = get_the_category(); 
+                        $curr_cat_id = $curr_cat[0]->catID; 
+                        //echo '<pre>'; print_r($curr_cat_id); exit; 
+                        //$myCat = $catsy[0]->cat_ID;
+                        wp_list_categories(array(
+                            'hierarchical' => true,
+                            'title_li' => '',
+                            'current_category' => $curr_cat_id, 
+                        )); 
+                        ?>
                         <?php 
                             echo get_sidebar_page_links(); 
                         ?>

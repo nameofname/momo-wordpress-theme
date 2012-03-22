@@ -61,18 +61,20 @@ a {
 }
 
 #secondary {
-	float: left;
-	overflow: hidden;
-	width: 200px;
-  margin-right: 20px; 
-  background-color: #F5F5F5; 
-  padding: 10px; 
+    position: fixed; 
+    top: 80px; 
+    overflow: hidden;
+    width: 200px;
+    margin-right: 20px; 
+    background-color: #F5F5F5; 
+    padding: 10px; 
 }
 
-#primary {
-    float: left;
+#primary, 
+#home {
     width: 740px;
     position: relative; 
+    margin-left: 240px; 
 }
 
 #colophon {
@@ -485,17 +487,12 @@ article.comment {
 	padding: 1em 0 0;
 }
 
-#home {
-	float: left;
-	width: 740px;
-        position: relative; 
-}
 #main {
     float: left; 
 }
 
-#main .entry-content, 
-#home .entry-content {
+/*#home .entry-content {*/
+#main .entry-content {
     position: relative;
 }
 
@@ -579,8 +576,37 @@ article {
     background-color: #CCC; 
 }
 
-.curr_cat a {
+.cat-item {
+    list-style: none; 
+    position: relative; 
+}
+
+.cat-item.current-cat {
     font-weight: bold; 
+}
+
+.cat-item.current-cat .children {
+    font-weight: normal; 
+}
+
+.cat-item .children {
+    margin-left: 15px; 
+    display: none; 
+}
+
+.nav_expander {
+    display: inline-block; 
+    margin-left: 10px; 
+    width: 15px; 
+    height: 15px; 
+}
+
+.nav_expander.nav_collapsed {
+    background-color: red; 
+}
+
+.nav_expander.nav_expanded {
+    background-color: blue; 
 }
 
 #categories li a {
