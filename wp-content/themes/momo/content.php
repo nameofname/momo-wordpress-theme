@@ -49,8 +49,8 @@
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
+    <span class="comments-number"><?php momo_comments_number(); ?></span>
     <?php
-        momo_comments_number(); 
         echo get_post_comments($post->ID, 3); 
         momo_comments_form(); 
     ?>

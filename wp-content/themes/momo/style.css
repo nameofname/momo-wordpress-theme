@@ -34,7 +34,8 @@ html, body {
 }
 
 div, p, ul, ol, label, td, input, span, time {
-    font-size: 13px; 
+    font-size: 14px; 
+    line-height: 21px; 
 }
 
 a {
@@ -94,6 +95,12 @@ li {
     width: 740px;
     position: relative; 
     margin-left: 240px; 
+}
+
+#home #content {
+    /*position: relative; 
+    top: -5 000px; 
+    opacity: 0; */
 }
 
 #colophon {
@@ -266,14 +273,24 @@ li {
 	overflow: hidden;
 }
 #content nav .nav-previous {
-	float: left;
-	width: 50%;
+    float: left;
 }
+
+#content nav .nav-previous a {
+    background: url(images/previous.png) no-repeat transparent 0% 50%; 
+    padding-left: 15px; 
+}
+
 #content nav .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+    float: right;
+    text-align: right;
 }
+
+#content nav .nav-next a {
+    background: url(images/next.png) no-repeat transparent 100% 50%; 
+    padding-right: 15px; 
+}
+
 #content #nav-above {
 	display: none;
 }
@@ -429,7 +446,7 @@ img.alignright {
 -------------------------------------------------------------- */
 
 #searchform  {
-    padding: 8px 10px; 
+    padding: 6px 10px; 
 }
 
 #searchform label {
@@ -588,6 +605,10 @@ article {
     margin: 20px 0px 10px; 
 }
 
+#home .post footer.entry-meta {
+    margin: 0px 0px 10px; 
+}
+
 .post .post-edit-link, 
 .page .post-edit-link {
     display: inline-block; 
@@ -655,7 +676,8 @@ article {
     background-color: #FCFCFC; 
     border: 1px solid #E3E3E3; 
     cursor: pointer; 
-    padding: 2px 5px; 
+    padding: 0px 4px; 
+    line-height: 14px; 
 }
 
 .comments_home_show_btn:hover {

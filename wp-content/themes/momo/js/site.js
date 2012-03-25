@@ -56,9 +56,9 @@ function initCommentsInteractions() {
         $(this).animate({'height' : '120px'})
     }); 
 
-    $('.comment-form-comment textarea').blur(function(){
+    /*$('.comment-form-comment textarea').blur(function(){
         $(this).animate({'height' : '40px'})
-    }); 
+    }); */
 }
 
 // Collapse and expand sub categories in the main navigation. 

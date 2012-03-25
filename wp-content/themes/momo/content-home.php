@@ -26,10 +26,12 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'Momofuku' ) ); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'Momofuku' ), 'after' => '</div>' ) ); ?>
-            <div class="expand">...Read More</div>
-	</div><!-- .entry-content -->
+    <div class="entry-content-inner">
+        <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'Momofuku' ) ); ?>
+        <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'Momofuku' ), 'after' => '</div>' ) ); ?>
+        <div class="expand">...Read More</div>
+	  </div>
+  </div><!-- .entry-content -->
 	<?php endif; ?>
 
 	<footer class="entry-meta">
@@ -57,7 +59,7 @@
     <?php endif; // End if $tags_list ?>
         <?php endif; // End if 'post' == get_post_type() ?>
 
-        <?php momo_comments_number(); ?>
+        <span class="comments-number"><?php momo_comments_number(); ?></span>
         <span class="comments_home_show_btn">&#043;</span>
         <div class="comments_home_hide">
             <?php 

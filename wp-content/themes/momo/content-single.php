@@ -20,6 +20,7 @@
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'Momofuku' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
+  <span class="comments-number"><?php momo_comments_number(); ?></span>
   <?php
       // Spit out all comments (get all when you pass null instead of a number 
       // AND dump the commenting form. 

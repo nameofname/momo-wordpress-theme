@@ -26,7 +26,7 @@
 	<footer class="entry-meta">
 		<?php Momofuku_posted_on(); ?>
 		<span class="sep"> | </span>
-		<?php momo_comments_number(); ?>
+    <span class="comments-number"><?php momo_comments_number(); ?></span>
 
 		<?php edit_post_link( __( 'Edit', 'Momofuku' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 	</footer><!-- #entry-meta -->

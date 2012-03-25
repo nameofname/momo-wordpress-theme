@@ -80,6 +80,6 @@
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php momo_comments_number(); ?>
+    <span class="comments-number"><?php momo_comments_number(); ?></span>
 	</footer><!-- #entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
