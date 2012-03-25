@@ -29,6 +29,7 @@ Please note-
 
 html, body {
     font-family: helvetica, arial, sans-serif; 
+    font-family: times-new-roman; 
     color: #4C4C4C; 
 }
 
@@ -37,8 +38,16 @@ div, p, ul, ol, label, td, input, span, time {
 }
 
 a {
-    color: #ff6600; 
     text-decoration: none; 
+    color: #4C4C4c; 
+}
+
+a:hover {
+    color: #CC0033; 
+}
+
+h1, h2, h3, h4 {
+    /*font-family: "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:100; font-stretch:normal;*/ font: 30px/40px 'LaneNarrowRegular', Arial, sans-serif; 
 }
 
 #page {
@@ -51,13 +60,14 @@ a {
     width: 100%; 
     height: 60px; 
     min-width: 600px; 
-    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    /*-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);*/
     position: fixed; 
     top: 0px; 
     z-index: 1; 
     background-color: #FFFFFF; 
+    border-bottom: 1px solid #ccc; 
 }
 
 #secondary {
@@ -66,7 +76,7 @@ a {
     overflow: hidden;
     width: 200px;
     margin-right: 20px; 
-    background-color: #F5F5F5; 
+    background-color: #FCFCFC; 
     padding: 10px; 
 }
 
@@ -119,12 +129,14 @@ a {
 -------------------------------------------------------------- */
 
 #site-title {
-	font-size: 2em;
-	font-weight: bold;
 	margin: 10px 0px 0px 15px;
-	width: 300px;
 	float: left;
 }
+
+#site-title a:hover {
+    color: #4C4C4C; 
+}
+
 #site-description {
 	font-size: 1em;
 	font-weight: normal;
@@ -136,7 +148,7 @@ a {
 -------------------------------------------------------------- */
 
 #access {
-	background: #eee;
+	background: #FCFCFC;
 	display: block;
 	float: right;
 	margin: 0 auto 1em;
@@ -169,6 +181,7 @@ a {
 
 .hello {
     font-size: 11px; 
+    color: #CC0033; 
 }
 
 #access a {
@@ -199,7 +212,8 @@ a {
 	width: 10em;
 	height: auto;
 }
-#access li:hover > a,
+
+/*#access li:hover > a,
 #access ul ul :hover > a {
 	background: #dedede;
 }
@@ -208,7 +222,7 @@ a {
 }
 #access ul li:hover > ul {
 	display: block;
-}
+}*/
 
 
 /* =Content
@@ -279,7 +293,7 @@ a {
 /* Notices */
 .post .notice,
 .error404 #searchform {
-	background: #eee;
+	background: #FCFCFC;
 	display: block;
 	padding: 1em;
 }
@@ -296,7 +310,7 @@ a {
 	clear: both;
 }
 .image-attachment .entry-content .entry-attachment {
-	background: #eee;
+	background: #FCFCFC;
 	margin: 0 0 1em;
 	padding: 1em;
 	text-align: center;
@@ -455,10 +469,10 @@ article.comment {
 	display: block;
 }
 
-#submit {
+#submit, #searchsubmit {
     padding: 3px 5px; 
     border: 1px solid #CCCCCC; 
-    background-color: #EEE; 
+    background-color: #FCFCFC; 
     cursor: pointer; 
 }
 
@@ -511,9 +525,11 @@ article.comment {
     position: absolute;
     bottom: 0px; 
     right: 0px; 
+    width: 100%; 
+    text-align: right; 
     padding: 1px 4px;
-    background-color: #EEE; 
-    border: 1px solid #CCC; 
+    background-color: #FFFFFF; 
+    border-top: 1px solid #CCC; 
     cursor: pointer; 
 }
 
@@ -522,14 +538,6 @@ article.comment {
     background-color: #CCC; 
 }
 
-/*.collapse {
-    background-color: red; 
-}
-
-.expand {
-    background-color: blue; 
-}*/
-
 article {
     margin-bottom: 20px; 
 }
@@ -537,8 +545,7 @@ article {
 
 .short-comment {
     margin: 10px 0px; 
-    background-color: #EEE; 
-    border: 1px solid #CCC; 
+    background-color: #FCFCFC; 
     padding: 3px 5px; 
 }
 
@@ -567,7 +574,7 @@ article {
     right: 10px; 
     width: 25px; 
     height: 15px; 
-    background-color: #EEE; 
+    background-color: #FCFCFC; 
     border: 1px solid #CCC; 
     padding: 3px 5px; 
 }
@@ -579,10 +586,11 @@ article {
 .cat-item {
     list-style: none; 
     position: relative; 
+    margin-left: 15px; 
 }
 
-.cat-item.current-cat {
-    font-weight: bold; 
+.cat-item.current-cat a {
+    color: #CC0033; 
 }
 
 .cat-item.current-cat .children {
@@ -619,7 +627,7 @@ article {
 
 .comments_home_show_btn {
     display: inline-block; 
-    background-color: #EEE; 
+    background-color: #FCFCFC; 
     border: 1px solid #CCC; 
     cursor: pointer; 
     padding: 2px 5px; 

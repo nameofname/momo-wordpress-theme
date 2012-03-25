@@ -8,8 +8,8 @@ $(document).ready(function(){
         //$(this).data('height', h); 
         //$(this).data('orig_height', h1); 
         $(this).data('height', h); 
-        $(this).data('orig_height', '92px'); 
-        $(this).css('height', '92px'); 
+        $(this).data('orig_height', '99px'); 
+        $(this).css('height', '99px'); 
         if (h <= 92){
             $(this).find('.expand').remove(); 
         }

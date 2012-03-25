@@ -438,7 +438,7 @@ function momo_hero_banner_admin() {
             <label for="remove">Remove hero banner: </label> 
             <input id="remove" type="checkbox" name="remove"> 
             </div>
-            <input id="submit" type="submit" name="submit" value="Submit"> 
+            <input id="submit" class="submit" type="submit" name="submit" value="Submit"> 
             </form> ';
         $file_dir=get_bloginfo('template_directory'); 
         wp_enqueue_style("functions", $file_dir."/functions.css", false, "1.0", "all");  
@@ -523,8 +523,14 @@ function momo_custom_login_css() {
 add_action('login_head', 'momo_custom_login_css');
 
 
+function load_my_styles() {
+	// assign the url of theme to a variable $themedir
+	$themedir = get_bloginfo('template_url');
+	wp_enqueue_style( 'my_style',  $themedir . "/fonts/lane/stylesheet.css");
+	}
 
-
+// Load the above function via init hook.
+add_action('init', load_my_styles);
 
 
 
