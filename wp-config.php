@@ -19,10 +19,10 @@
 define('DB_NAME', 'momofuku_test');
 
 /** MySQL database username */
-define('DB_USER', 'USER');
+define('DB_USER', 'ronald');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'PW');
+define('DB_PASSWORD', 'dev');
 
 /** MySQL hostname */
 define('DB_HOST', '127.0.0.1');

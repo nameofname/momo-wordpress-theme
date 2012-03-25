@@ -29,7 +29,7 @@ Please note-
 
 html, body {
     font-family: helvetica, arial, sans-serif; 
-    font-family: times-new-roman; 
+    font-family: times-new-roman, times, serif; 
     color: #4C4C4C; 
 }
 
@@ -50,6 +50,15 @@ h1, h2, h3, h4 {
     /*font-family: "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:100; font-stretch:normal;*/ font: 30px/40px 'LaneNarrowRegular', Arial, sans-serif; 
 }
 
+ul {
+    list-style: none; 
+    text-indent: 15px; 
+}
+
+li {
+    list-style-position: inside; 
+}
+
 #page {
 	display: block;
 	margin: 15px;
@@ -67,7 +76,7 @@ h1, h2, h3, h4 {
     top: 0px; 
     z-index: 1; 
     background-color: #FFFFFF; 
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #E3E3E3; 
 }
 
 #secondary {
@@ -124,13 +133,22 @@ h1, h2, h3, h4 {
 	margin-right: auto;
 }
 
+.page-title span {
+    font-size: 30px; 
+    text-transform: uppercase; 
+}
+
+.page-title {
+    margin-bottom: 15px; 
+}
 
 /* =Header
 -------------------------------------------------------------- */
 
 #site-title {
-	margin: 10px 0px 0px 15px;
-	float: left;
+	margin: 10px 0px 0px 15px; 
+	float: left; 
+  font-size: 30px; 
 }
 
 #site-title a:hover {
@@ -411,7 +429,7 @@ img.alignright {
 -------------------------------------------------------------- */
 
 #searchform  {
-    padding: 10px; 
+    padding: 8px 10px; 
 }
 
 #searchform label {
@@ -419,6 +437,7 @@ img.alignright {
 }
 #searchform input#s {
 	width: 60%;
+  border: 1px solid #E3E3E3; 
 }
 input[type=text],
 input#s {
@@ -450,7 +469,7 @@ article.comment {
     margin: 0 0 1em;
     width: 100%;
     height: 40px; 
-    border: 1px solid #ccc; 
+    border: 1px solid #E3E3E3; 
 }
 
 .form-allowed-tags{
@@ -459,6 +478,8 @@ article.comment {
 
 .show-form-allowed {
     cursor: pointer; 
+    display: block; 
+    margin: 5px 0px; 
 }
 
 .respond .form-allowed-tags {
@@ -466,18 +487,19 @@ article.comment {
 	width: 80%;
 }
 .respond .form-allowed-tags code {
-	display: block;
+    display: block;
+    background-color: #FCFCFC; 
 }
 
 #submit, #searchsubmit {
-    padding: 3px 5px; 
-    border: 1px solid #CCCCCC; 
+    padding: 0px 5px; 
+    border: 1px solid #E3E3E3; 
     background-color: #FCFCFC; 
     cursor: pointer; 
 }
 
 #submit:hover {
-    background-color: #CCC; 
+    background-color: #E3E3E3; 
 }
 
 /* =Widgets
@@ -529,14 +551,14 @@ article.comment {
     text-align: right; 
     padding: 1px 4px;
     background-color: #FFFFFF; 
-    border-top: 1px solid #CCC; 
+    border-top: 1px solid #E3E3E3; 
     cursor: pointer; 
 }
 
-.expand:hover, 
+/*.expand:hover, 
 .collapse:hover {
-    background-color: #CCC; 
-}
+    background-color: #E3E3E3; 
+}*/
 
 article {
     margin-bottom: 20px; 
@@ -563,30 +585,26 @@ article {
 }
 
 .post footer.entry-meta {
-    margin: 10px 0px; 
+    margin: 20px 0px 10px; 
 }
 
-.post .edit-link, 
-.page .edit-link {
-    display: block; 
-    position: absolute; 
-    top: 0px; 
-    right: 10px; 
-    width: 25px; 
-    height: 15px; 
-    background-color: #FCFCFC; 
-    border: 1px solid #CCC; 
-    padding: 3px 5px; 
+.post .post-edit-link, 
+.page .post-edit-link {
+    display: inline-block; 
+    width: 20px; 
+    height: 20px; 
+    background: url(images/edit.png); 
 }
 
-.post .edit-link:hover {
-    background-color: #CCC; 
-}
+/*.post .post-edit-link:hover {
+    background-color: #E3E3E3; 
+}*/
 
 .cat-item {
     list-style: none; 
     position: relative; 
     margin-left: 15px; 
+    text-indent: 0px; 
 }
 
 .cat-item.current-cat a {
@@ -602,19 +620,26 @@ article {
     display: none; 
 }
 
+#secondary ul {
+    text-indent: 0px; 
+}
+
 .nav_expander {
     display: inline-block; 
-    margin-left: 10px; 
-    width: 15px; 
-    height: 15px; 
+    margin-left: 6px; 
+    margin-bottom: -2px; 
+    width: 11px; 
+    height: 11px; 
+    background-repeat: no-repeat; 
+    cursor: pointer; 
 }
 
 .nav_expander.nav_collapsed {
-    background-color: red; 
+    background-image: url(images/plus.png); 
 }
 
 .nav_expander.nav_expanded {
-    background-color: blue; 
+    background-image: url(images/minus.png); 
 }
 
 #categories li a {
@@ -628,13 +653,13 @@ article {
 .comments_home_show_btn {
     display: inline-block; 
     background-color: #FCFCFC; 
-    border: 1px solid #CCC; 
+    border: 1px solid #E3E3E3; 
     cursor: pointer; 
     padding: 2px 5px; 
 }
 
 .comments_home_show_btn:hover {
-    background-color: #CCC; 
+    background-color: #E3E3E3; 
 }
 
 #momo_hero_banner {
