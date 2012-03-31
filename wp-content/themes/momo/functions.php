@@ -478,6 +478,8 @@ function handle_image_upload($upload){
 
 /**
  * @function momo_create_taxonomy - Create sub category and ingredient taxonomies for post categorization. 
+ * @note - This is not currently used.  Categories and sub categories will be managed through the normal 
+ * Wordpress process. 
  */
 function momo_create_taxonomy() { // Add new "Locations" taxonomy to Posts 
     register_taxonomy(
@@ -505,8 +507,53 @@ function momo_create_taxonomy() { // Add new "Locations" taxonomy to Posts
         )
     ); 
 } 
+//add_action( 'init', 'momo_create_taxonomy', 0 );
 
-add_action( 'init', 'momo_create_taxonomy', 0 );
+
+// REMOVE STUFF FROM THE ADMIN THAT WE DON'T WANT USERS TO SEE: 
+function customize_meta_boxes() {
+    /* Removes meta boxes from Posts */
+    remove_meta_box('postcustom','post','normal');
+    remove_meta_box('trackbacksdiv','post','normal');
+    remove_meta_box('commentstatusdiv','post','normal');
+    //remove_meta_box('commentsdiv','post','normal');
+    remove_meta_box('tagsdiv-post_tag','post','normal');
+    remove_meta_box('postexcerpt','post','normal');
+    remove_meta_box('formatdiv','post','normal');
+    /* Removes meta boxes from pages */
+    remove_meta_box('postcustom','page','normal');
+    remove_meta_box('trackbacksdiv','page','normal');
+    remove_meta_box('commentstatusdiv','page','normal');
+    remove_meta_box('commentsdiv','page','normal'); 
+}
+
+add_action('admin_init','customize_meta_boxes');
+
+function remove_menu_items() {
+    global $menu;
+    $restricted = array(__('Links'), __('Comments'), __('Media'),
+    __('Plugins'), __('Tools'), __('Users'));
+    end ($menu);
+    while (prev($menu)){
+        $value = explode(' ',$menu[key($menu)][0]);
+        if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){
+            unset($menu[key($menu)]);
+        
+        }
+    }
+}
+
+function remove_sub_menus() {
+    global $submenu;
+    unset($submenu['edit.php'][16]); // Removes 'Tags'.  
+}
+
+// Only remove menu items if not admin: 
+$is_administrator = current_user_can('administrator') ? true : false; 
+if (!$is_administrator) {
+    add_action('admin_menu', 'remove_menu_items');
+    add_action('admin_menu', 'remove_sub_menus');
+}
 
 
 // CREATE CUSTOM WORDPRESS LOGIN SCREEN:::
