@@ -64,7 +64,6 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<?php wp_enqueue_script('jquery_theme', get_template_directory_uri() . '/js/jquery-1.7.1.min.js'); ?>
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' ); 
 }?>
@@ -97,13 +96,14 @@ html{
                     $blinfo = get_bloginfo('url'); 
                     $logout_url = wp_logout_url(); 
                     $username = $current_user->user_nicename; 
-                    if(is_user_logged_in() && (current_user_can('administrator')) | current_user_can('author')) {
+                    if(is_user_logged_in() && (current_user_can('administrator')) | current_user_can('editor')) {
                         $toolbar = "
-                            <ul>
+                            <ul id='toolbar'>
                                 <li class='hello'><i>Hello $username</i></li>
                                 <li><a href='$blinfo/wp-admin/post-new.php' title='Contribute'>New post</a></li>
-                                <li><a href='$logout_url' title='Logout'>Logout</a></li>
+                                <li><a href='/wp-admin'>Admin</a></li>
                                 <li class='nav_search'>Search+</li>
+                                <li><a href='$logout_url' title='Logout'>Logout</a></li>
                         "; 
                     } else {
                         $toolbar = "
@@ -115,8 +115,8 @@ html{
                     }
                     $toolbar .= '</ul>'; 
                     echo $toolbar; 
-                    get_search_form(); 
-
+                    //get_search_form(); 
+                    echo momo_get_search(); 
                 ?>
             </nav><!-- #access -->
 		</hgroup>

@@ -69,7 +69,7 @@ li {
 #header {
     width: 100%; 
     height: 60px; 
-    min-width: 600px; 
+    min-width: 700px; 
     /*-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);*/
@@ -179,15 +179,11 @@ li {
 	margin: 0 auto 1em;
 }
 
-#access ul {
+#access ul#toolbar {
     list-style: none;
     margin: 0;
     padding-left: 0;
     height: 25px; 
-}
-
-#access form {
-    display: none; 
 }
 
 .nav_search {
@@ -356,6 +352,11 @@ li {
 	text-align: center;
 }
 
+.entry-title {
+    font-size: 22px; 
+    line-height: 33px; 
+}
+
 /* Aside Posts */
 .format-aside .entry-header {
 	display: none;
@@ -445,6 +446,12 @@ img.alignright {
 /* =Forms
 -------------------------------------------------------------- */
 
+
+#access form#searchform {
+    display: none; 
+    clear: both; 
+}
+
 #searchform  {
     padding: 6px 10px; 
 }
@@ -452,15 +459,34 @@ img.alignright {
 #searchform label {
 	display: none;
 }
+
 #searchform input#s {
-	width: 60%;
-  border: 1px solid #E3E3E3; 
+    width: 25%;
+    height: 22px; 
+    font-size: 11px; 
+    margin-left: 15px; 
+    clear: both; 
+    border: 1px solid #E3E3E3; 
+    color: #999999; 
 }
-input[type=text],
-input#s {
-	margin: 0 1em 0 0;
-	width: 60%;
+
+#searchform select#category_search {
+    width: 35%;
+    clear: both; 
 }
+
+#searchform #category_search_chzn {
+    width: 35%;
+    margin-left: 15px; 
+    position: relative; 
+    top: -2px; 
+}
+
+#searchform input#submit {
+    margin-left: 15px; 
+    padding: 0px 5px; 
+}
+
 textarea {
 	width: 80%;
 }
@@ -468,6 +494,14 @@ textarea {
 /* Class for labelling required form items */
 .required {
 	color: #cc0033;
+}
+
+#category_search_chzn a {
+    background-image: none; 
+    border: 1px solid #EEEEEE; 
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 
@@ -701,3 +735,8 @@ article {
     margin-bottom: 10px; 
 }
 
+.archive-post {
+    margin-bottom: 15px; 
+    padding: 10px;  
+    background-color: #FCFCFC; 
+}

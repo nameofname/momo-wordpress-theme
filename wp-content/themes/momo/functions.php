@@ -515,7 +515,7 @@ function customize_meta_boxes() {
     /* Removes meta boxes from Posts */
     remove_meta_box('postcustom','post','normal');
     remove_meta_box('trackbacksdiv','post','normal');
-    remove_meta_box('commentstatusdiv','post','normal');
+    //remove_meta_box('commentstatusdiv','post','normal');
     //remove_meta_box('commentsdiv','post','normal');
     remove_meta_box('tagsdiv-post_tag','post','normal');
     remove_meta_box('postexcerpt','post','normal');
@@ -523,8 +523,8 @@ function customize_meta_boxes() {
     /* Removes meta boxes from pages */
     remove_meta_box('postcustom','page','normal');
     remove_meta_box('trackbacksdiv','page','normal');
-    remove_meta_box('commentstatusdiv','page','normal');
-    remove_meta_box('commentsdiv','page','normal'); 
+    //remove_meta_box('commentstatusdiv','page','normal');
+    //remove_meta_box('commentsdiv','page','normal'); 
 }
 
 add_action('admin_init','customize_meta_boxes');
@@ -556,29 +556,102 @@ if (!$is_administrator) {
 }
 
 
+function remove_dashboard_widgets(){
+  global$wp_meta_boxes;
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+  unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+  //unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+  unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']); 
+  unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']); 
+}
+
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+
+/**
+ * REMOVE UNUSED ROLES: 
+ * @note removign unused roles leaves users in tact, with no role. It does not 
+ * harm their posts. 
+ */ 
+function remove_roles() {
+    remove_role('author');
+    remove_role('contributor');
+}
+remove_roles(); 
+
 // CREATE CUSTOM WORDPRESS LOGIN SCREEN:::
 /**
  * @desc attach custom admin login CSS file
  */
-function momo_custom_login_css() {
+function momo_custom_login_js_css() {
     $bloginfo = get_bloginfo('template_url'); 
     echo '<link rel="stylesheet" type="text/css" href="' . $bloginfo . '/css/momo-login.css" />'; 
     echo "<script src='$bloginfo/js/jquery-1.7.1.min' type='text/javascript'></script>"; 
     echo "<script src='$bloginfo/js/momo-login.js' type='text/javascript'></script>"; 
 }
  
-add_action('login_head', 'momo_custom_login_css');
+add_action('login_head', 'momo_custom_login_js_css');
 
-
-function load_my_styles() {
-	// assign the url of theme to a variable $themedir
-	$themedir = get_bloginfo('template_url');
-	wp_enqueue_style( 'my_style',  $themedir . "/fonts/lane/stylesheet.css");
-	}
+function load_my_js_css() {
+    // assign the url of theme to a variable $themedir
+    $themedir = get_bloginfo('template_url');
+    wp_enqueue_style( 'my_style',  $themedir . "/fonts/lane/stylesheet.css");
+    wp_enqueue_style( 'chosen_stylesheet',  $themedir . "/css/chosen.css");
+    wp_enqueue_script('jquery_theme', get_template_directory_uri() . '/js/jquery-1.7.1.min.js'); 
+    wp_enqueue_script('chosen_js', $themedir . "/js/chosen.jquery.min.js", 'jquery_theme'); 
+}
 
 // Load the above function via init hook.
-add_action('init', load_my_styles);
+add_action('init', load_my_js_css);
 
+//$comments_open = comments_open(); 
+//echo '<pre>'; var_dump($comments_open); exit; 
+
+
+// get peramaters for search drop down
+function momo_get_search_terms() {
+    $search_param_args = array(
+    'hierarchical' => TRUE, 
+    'orderby' => 'name', 
+    ); 
+    $get_search = get_categories($search_param_args); 
+    $search_terms = array(); 
+    //echo '<pre>'; var_dump($get_search); exit; 
+    for ($i=0; $i<sizeof($get_search); $i++) {
+        $search_terms[$i] = $get_search[$i]->name; 
+    }
+    /*$json_search_params = json_encode($search_terms); 
+    $json_out = "<script type='text/javascript'>
+        var momo_search_terms = $json_search_params; 
+    </script>"; */
+    return $search_terms; 
+}
+
+function momo_get_search(){
+    /*$out = '<select id="chosen_search">'; 
+    $searches = momo_get_search_terms(); 
+    for ($i = 0; $i < sizeof($searches); $i++) {
+        $out .= "<option>$searches[$i]</option>"; 
+    }
+    $out.= '</select>'; 
+    return $out; */
+    $url = get_bloginfo('url');
+    $top = "<form action='$url' method='get' id='searchform'>" ; 
+    $top .= '<div>'; 
+    $top .= '<input type="text" name="s" id="s" value="Keyword Search" />'; 
+    echo $top; 
+    $dropdown_args = array(
+        'show_count' => 1, 
+        'hierarchical' => 1, 
+        'id' => 'category_search', 
+    ); 
+    wp_dropdown_categories($dropdown_args);
+    $bottom .= '<input type="submit" id="submit" name="submit" value="submit" />'; 
+    $bottom .= '</div>'; 
+    $bottom .= '</form>'; 
+    echo $bottom; 
+}
 
 
 ?>

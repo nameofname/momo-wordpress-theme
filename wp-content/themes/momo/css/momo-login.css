@@ -1,6 +1,15 @@
 body.login {
-    background-image: url(/wp-content/themes/momo/images/mole.jpg);
-    background-position: top right; 
+    background-image: url(/wp-content/themes/momo/images/html-slice.jpg);
+}
+
+div#login{ 
+    width: 2000px;
+    height: 1592px;
+    background: url(/wp-content/themes/momo/images/mole.jpg);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-repeat: no-repeat;
 }
 
 h1, 
@@ -17,53 +26,98 @@ form#loginform {
     -webkit-box-shadow: rgba(200,200,200,0.0) 0 0px 0px 0px;
     box-shadow: rgba(200,200,200,0.0) 0 0px 0; 
     autocomplete: off; 
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
 }
 
-form#loginform input.input {
+form#loginform input.input, 
+form#lostpasswordform input#user_login {
     background-color: transparent; 
     border: 0px; 
+    border-bottom: 1px solid #6A6E4B; 
     -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+form#lostpasswordform input#wp-submit {
+    background: transparent; 
+    border: 0px transparent solid; 
 }
 
 input#user_login, 
 input#user_pass, 
 p#nav {
     position: absolute; 
-    width: 300px; 
+    width: 395px; 
+    right: 275px; 
 }
 
 input#user_login {
-    right: 490px; 
-    top: 250px; 
+    top: 253px; 
 }
 
 input#user_pass {
-    right: 327px; 
-    top: 313px; 
+    top: 310px; 
 }
 
 p#nav {
-    right: 480px; 
+    margin: 0px; 
+    padding: 0px; 
+    right: 388px; 
     top: 396px; 
 }
 
-p.submit {
+form#loginform p.submit input#wp-submit, 
+form#lostpasswordform p.submit input#wp-submit { 
     position: absolute; 
-    right: 725px; 
+    right: 610px; 
+    width: 180px; 
+    text-align: left; 
+}
+
+form#loginform p.submit input#wp-submit{ 
     top: 368px; 
 }
 
+form#lostpasswordform p.submit input#wp-submit { 
+    top: 320px; 
+}
+
 form#loginform p.submit input#wp-submit, 
-.login p#nav a {
+form#lostpasswordform p.submit input#wp-submit, 
+.login p#nav a, 
+#custom-user-label, 
+#custom-pw-label {
     text-shadow: none!important; 
     font-weight: normal; 
     font-family: times, serif; 
     color: #6A6E4B!important; 
 }
 
-form#loginform p.submit input#wp-submit {
+#custom-user-label, 
+#custom-pw-label, 
+#user_login {
+    font-size: 22px; 
+    position: absolute; 
+    right: 590px; 
+    width: 210px; 
+}
+
+#custom-user-label {
+    top: 275px; 
+}
+
+#custom-pw-label {
+    top: 334px; 
+}
+
+form#loginform p.submit input#wp-submit, 
+form#lostpasswordform p.submit input#wp-submit {
     background: none; 
     border: 0px; 
     margin-bottom: 30px; 
@@ -71,3 +125,11 @@ form#loginform p.submit input#wp-submit {
     height: 30px; 
 }
 
+.login form#lostpasswordform, 
+.login form #user_login {
+    background-color: transparent; 
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    border: 0px; 
+}

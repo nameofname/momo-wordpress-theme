@@ -2,6 +2,7 @@ $(document).ready(function(){
     initCommentsInteractions(); 
     initToggleNavSearch(); 
     initNavExpand(); 
+    initChosenSearch(); 
 
 // End document.ready functions
 });
@@ -81,4 +82,15 @@ function initNavExpand() {
         //$(this).data('tognum', num++); 
         $(this).data('tognum', num); 
     }); 
+}
+
+function initChosenSearch() {
+    $('#category_search').attr('data-placeholder', 'Category Search'); 
+    $('#category_search').prepend($('<option>').text('Category Search')); 
+    $('#category_search').chosen().change(function(){
+        $('#access input#s').val(''); 
+    }); 
+    $('#category_search_chzn').css({'width': '44%'}); 
+    $('#category_search_chzn .chzn-drop').css({'width': '168px'}); 
+    $('#category_search_chzn input').css({'width': '84%'}); 
 }

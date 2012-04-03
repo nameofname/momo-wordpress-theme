@@ -4,8 +4,8 @@ $(document).ready(function(){
         $('form input').attr('autocomplete', 'off'); 
         $(this).html(input); 
     }); */
-    var user = $('#user_login'); 
-    var pw = $('#user_pass'); 
+    var user = $('<p>').attr({'class' : 'custom-label', 'id' : 'custom-user-label'}).text('User Name').after($('#user_login')); 
+    var pw = $('<p>').attr({'class' : 'custom-label', 'id' : 'custom-pw-label'}).text('Password').after($('#user_pass')); 
     user.attr('autocomplete', 'off'); 
     pw.attr('autocomplete', 'off'); 
     //$('form').attr('autocomplete', 'off'); 
