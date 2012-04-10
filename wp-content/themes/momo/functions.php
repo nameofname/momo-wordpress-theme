@@ -639,7 +639,7 @@ function momo_get_search(){
     $url = get_bloginfo('url');
     $top = "<form action='$url' method='get' id='searchform'>" ; 
     $top .= '<div>'; 
-    $top .= '<input type="text" name="s" id="s" value="Keyword Search" />'; 
+    $top .= '<input type="text" name="s" id="s" value="" />'; 
     echo $top; 
     $dropdown_args = array(
         'show_count' => 1, 

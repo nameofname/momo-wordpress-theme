@@ -68,16 +68,13 @@ li {
 
 #header {
     width: 100%; 
-    height: 60px; 
+    height: 80px; 
     min-width: 700px; 
-    /*-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);*/
     position: fixed; 
     top: 0px; 
     z-index: 1; 
     background-color: #FFFFFF; 
-    border-bottom: 1px solid #E3E3E3; 
+    /*border-bottom: 1px solid #E3E3E3; */
 }
 
 #secondary {
@@ -86,7 +83,8 @@ li {
     overflow: hidden;
     width: 200px;
     margin-right: 20px; 
-    background-color: #FCFCFC; 
+    /*background-color: #FCFCFC; */
+    background-image: url(images/speckle_bg.jpg); 
     padding: 10px; 
 }
 
@@ -155,7 +153,7 @@ li {
 #site-title {
 	margin: 10px 0px 0px 15px; 
 	float: left; 
-  font-size: 30px; 
+    font-size: 29px; 
 }
 
 #site-title a:hover {
@@ -173,7 +171,8 @@ li {
 -------------------------------------------------------------- */
 
 #access {
-	background: #FCFCFC;
+    /*background-color: #FCFCFC; */
+    background-image: url(images/speckle_bg.jpg); 
 	display: block;
 	float: right;
 	margin: 0 auto 1em;
@@ -640,7 +639,11 @@ article {
 }
 
 #home .post footer.entry-meta {
-    margin: 0px 0px 10px; 
+    margin: 0px 0px 50px; 
+}
+
+#home .post img {
+    display: none; 
 }
 
 .post .post-edit-link, 
