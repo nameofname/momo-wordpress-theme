@@ -29,8 +29,8 @@ function get_sidebar_page_links() {
     $pages = get_pages();
     $output = ''; 
     if(sizeof($pages)) {
-        $output .= "<h1 id='pages-header' class='widget-title'>Pages</h1>"; 
-        $output .= '<ul>'; 
+        //$output .= "<h1 id='pages-header' class='widget-title'>Pages</h1>"; 
+        $output .= '<ul id="pages-nav">'; 
         foreach ($pages as $page) {
             $link = get_page_link($page->ID); 
             $name = $page->post_title; 

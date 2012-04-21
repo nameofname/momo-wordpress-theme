@@ -78,12 +78,11 @@ li {
 }
 
 #secondary {
-    position: fixed; 
+    float: left; 
     top: 80px; 
     overflow: hidden;
     width: 200px;
     margin-right: 20px; 
-    /*background-color: #FCFCFC; */
     background-image: url(images/speckle_bg.jpg); 
     padding: 10px; 
 }
@@ -279,6 +278,10 @@ li {
 #content nav .nav-next {
     float: right;
     text-align: right;
+}
+
+#pages-nav {
+    margin-top: 30px; 
 }
 
 #content nav .nav-next a {
