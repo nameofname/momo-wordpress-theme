@@ -16,7 +16,6 @@ get_header(); ?>
 			<div id="content" role="main">
             <?php
                 $path = get_option('momo_hero_banner'); 
-                //$path = 'http://local.momo.com/nothing.jpg'; 
                 if (getimagesize($path)) {
                     echo "<img id='momo_hero_banner' src='$path' alt='' />"; 
                 }

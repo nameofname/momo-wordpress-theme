@@ -647,11 +647,19 @@ function momo_get_search(){
         'id' => 'category_search', 
     ); 
     wp_dropdown_categories($dropdown_args);
-    $bottom .= '<input type="submit" id="submit" name="submit" value="submit" />'; 
+    $bottom = '<input type="submit" id="submit" name="submit" value="submit" />'; 
     $bottom .= '</div>'; 
     $bottom .= '</form>'; 
     echo $bottom; 
 }
+
+
+
+
+
+
+
+
 
 
 ?>

@@ -94,3 +94,19 @@ function initChosenSearch() {
     $('#category_search_chzn .chzn-drop').css({'width': '168px'}); 
     $('#category_search_chzn input').css({'width': '84%'}); 
 }
+
+
+
+
+
+//how would you do this in JS??? 
+
+function recur(arr){
+    for (i in arr) {
+        if (!arr[i]['used']) {
+            // do recur. 
+        }
+    }
+}
+
+

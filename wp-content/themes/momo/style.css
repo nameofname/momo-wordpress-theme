@@ -90,8 +90,7 @@ li {
 #primary, 
 #home {
     width: 740px;
-    position: relative; 
-    margin-left: 240px; 
+    float: left; 
 }
 
 #home #content {

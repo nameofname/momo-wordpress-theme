@@ -25,32 +25,26 @@ get_header(); ?>
 				</header>
 
 				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php 
+        while ((have_posts()))  {
+            the_post(); 
+            // determine whether you are in an Ideas sub-category.  If so, use the content-home style post format. 
+            if (is_category()) {
+                $cat = get_query_var('cat');
+                $the_cat = get_category ($cat); 
+                $is_ideas = (strpos(strtolower($the_cat->name), 'ideas') === FALSE) ? FALSE : TRUE; 
+                if ($is_ideas){
+                    get_template_part( 'content-home', get_post_format() );
+                } else {
+                    get_template_part( 'content-archive', get_post_format() );
+                }
+            } 
+        }
 
-        <?php
-            get_template_part( 'content-archive', get_post_format() );
+				Momofuku_content_nav( 'nav-below' ); 
+        
         ?>
-
-				<?php endwhile; ?>
-
-				<?php Momofuku_content_nav( 'nav-below' ); ?>
-
-			<?php else : ?>
-
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'Momofuku' ); ?></h1>
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-						<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'Momofuku' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
-
-			<?php endif; ?>
-
 			</div><!-- #content -->
 		</section><!-- #primary -->
-
+<?php endif; ?>
 <?php get_footer(); ?>
