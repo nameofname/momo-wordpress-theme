@@ -93,10 +93,8 @@ li {
     float: left; 
 }
 
-#primary-journaled #content {
-    /*position: relative; 
-    top: -5 000px; 
-    opacity: 0; */
+#primary.single .entry-content {
+    margin-bottom: 25px; 
 }
 
 #colophon {
