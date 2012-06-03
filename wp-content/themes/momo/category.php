@@ -5,12 +5,16 @@
  * @package Momofuku
  * @since Momofuku 0.1
  */
-
 get_header(); ?>
 
-<?php get_sidebar(); ?>
-		<section id="primary">
-			<div id="content" role="main">
+<?php 
+    get_sidebar(); 
+    $cat = get_query_var('cat');
+    $the_cat = get_category ($cat); 
+    $is_ideas = (strpos(strtolower($the_cat->name), 'ideas') === FALSE) ? FALSE : TRUE; 
+    $body_id = $is_ideas ? 'primary-journaled' : 'primary'; 
+?>
+		<div id="<?php echo $body_id ?>">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -30,9 +34,6 @@ get_header(); ?>
             the_post(); 
             // determine whether you are in an Ideas sub-category.  If so, use the content-home style post format. 
             if (is_category()) {
-                $cat = get_query_var('cat');
-                $the_cat = get_category ($cat); 
-                $is_ideas = (strpos(strtolower($the_cat->name), 'ideas') === FALSE) ? FALSE : TRUE; 
                 if ($is_ideas){
                     get_template_part( 'content-home', get_post_format() );
                 } else {
@@ -44,7 +45,6 @@ get_header(); ?>
 				Momofuku_content_nav( 'nav-below' ); 
         
         ?>
-			</div><!-- #content -->
-		</section><!-- #primary -->
+		</div><!-- #primary -->
 <?php endif; ?>
 <?php get_footer(); ?>

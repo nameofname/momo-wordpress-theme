@@ -653,13 +653,19 @@ function momo_get_search(){
     echo $bottom; 
 }
 
-
-
-
-
-
-
-
+function momo_get_category() {
+    if (is_single()) {
+        global $post; 
+        $cats = wp_get_post_categories($post->ID); 
+        $curr_cat = $cats[0]; 
+        echo 'it thinks this is a post'; exit; 
+    } else {
+        global $wp_query; 
+        $curr_cat = get_query_var('cat');
+    }
+    return $curr_cat; 
+}
 
 
 ?>
+

@@ -88,12 +88,12 @@ li {
 }
 
 #primary, 
-#home {
+#primary-journaled {
     width: 740px;
     float: left; 
 }
 
-#home #content {
+#primary-journaled #content {
     /*position: relative; 
     top: -5 000px; 
     opacity: 0; */
@@ -579,17 +579,16 @@ article.comment {
     float: left; 
 }
 
-/*#home .entry-content {*/
 #main .entry-content {
     position: relative;
 }
 
-#home .entry-content {
+#primary-journaled .entry-content {
     padding-bottom: 25px; 
 }
 
 
-#home .entry-content {
+#primary-journaled .entry-content {
     overflow: hidden; 
 }
 
@@ -640,11 +639,11 @@ article {
     margin: 20px 0px 10px; 
 }
 
-#home .post footer.entry-meta {
+#primary-journaled .post footer.entry-meta {
     margin: 0px 0px 50px; 
 }
 
-#home .post img {
+#primary-journaled .post img {
     display: none; 
 }
 

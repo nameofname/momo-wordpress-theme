@@ -12,8 +12,7 @@
 get_header(); ?>
 
 <?php get_sidebar(); ?>
-		<div id="home">
-			<div id="content" role="main">
+		<div id="primary-journaled">
             <?php
                 $path = get_option('momo_hero_banner'); 
                 if (getimagesize($path)) {
@@ -51,7 +50,6 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+		</div><!-- #primary-->
 
 <?php get_footer(); ?>

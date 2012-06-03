@@ -36,15 +36,8 @@ function get_sidebar_cat_links() {
     // to clean up, grab only the top level reference, which is stored under $cats_nested[0]
     $cats_nested = $cats_nested[0]; 
     // get the current category and pass into recursion (lookup only get performed 1X) 
-    #$catsy = get_the_category();
-    #$current_cat = $catsy[0]->cat_ID;
-    #echo '<pre>'; var_dump($catsy); exit; 
-    global $wp_query;
-    $current_cat = get_query_var('cat');
+    $current_cat = momo_get_category(); 
     //echo '<pre>'; var_dump($current_cat); exit; 
-    // get the top level categories for use in adding "archives" links to all
-    // top level cats: 
-    //$top_children= array_keys($cats_nested['children']);
     // generate nested <ul> navigation, based on $cat_arr starting at $fitst_id
     $output = momo_get_nested_nav($cats_nested, TRUE, $current_cat, FALSE); 
 

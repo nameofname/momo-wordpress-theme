@@ -67,7 +67,8 @@
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' ); 
 }?>
-<?php if (is_home()) wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js') ?>
+<?php //if (is_home()) wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js') ?>
+<?php wp_enqueue_script('home_js', get_template_directory_uri() . '/js/home.js') ?>
 <?php wp_enqueue_script('site_js', get_template_directory_uri() . '/js/site.js'); ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
