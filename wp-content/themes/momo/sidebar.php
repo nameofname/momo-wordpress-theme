@@ -36,10 +36,17 @@ function get_sidebar_cat_links() {
     // to clean up, grab only the top level reference, which is stored under $cats_nested[0]
     $cats_nested = $cats_nested[0]; 
     // get the current category and pass into recursion (lookup only get performed 1X) 
-    $catsy = get_the_category();
-    $this_cat = $catsy[0]->cat_ID;
+    #$catsy = get_the_category();
+    #$current_cat = $catsy[0]->cat_ID;
+    #echo '<pre>'; var_dump($catsy); exit; 
+    global $wp_query;
+    $current_cat = get_query_var('cat');
+    //echo '<pre>'; var_dump($current_cat); exit; 
+    // get the top level categories for use in adding "archives" links to all
+    // top level cats: 
+    $top_children= array_keys($cats_nested['children']);
     // generate nested <ul> navigation, based on $cat_arr starting at $fitst_id
-    $output = momo_get_nested_nav($cats_nested, TRUE, $this_cat); 
+    $output = momo_get_nested_nav($cats_nested, TRUE, $current_cat, $top_children); 
 
     return $output; 
 }
@@ -47,20 +54,23 @@ function get_sidebar_cat_links() {
 // does recursion to generate navigation from $cats_nested
 /*
  */
-function momo_get_nested_nav(&$cats, $top_level = FALSE, $this_cat = 0) {
+function momo_get_nested_nav(&$cats, $top_level = FALSE, $current_cat = 0, $top_children) {
     // start ul: $top_level should only be FALSE on the first pass 
     $out = $top_level ? "<ul>" : "<ul class='children'>";
 
     foreach ($cats['children'] as $id => $cat) {
+        // all top level children get a bonus link called "archive": 
+        if (in_array($id, $top_children)) {
+            $out .= "<li class='cat-item'></li>";
+        }
         //$link = get_category_link($id); 
         $link = '/?cat=' . $id; 
         $name = $cat['name']; 
-        //$curr_cat = is_category($id) ? ' curr_cat' : ''; 
-        $curr_cat = ($this_cat == $id) ? ' curr_cat' : ''; 
+        $curr_cat = ($current_cat == $id) ? ' curr_cat' : ''; 
         $out .= "<li class='cat-item$curr_cat'><a href='$link'>$name</a>"; 
-        // if the current $cat has children, recursively fetch associated <ul> 
+        // if the current $cat has children, recursively generate associated <ul> 
         if (sizeof($cat['children']) > 0){
-            $out .= momo_get_nested_nav($cat, FALSE, $this_cat); 
+            $out .= momo_get_nested_nav($cat, FALSE, $current_cat); 
         }
         $out .= "</li>"; 
     } 

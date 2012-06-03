@@ -83,6 +83,8 @@ function initNavExpand() {
         $(this).data('tognum', num); 
     }); 
     // open the current category: 
+    $('.curr_cat').children('.nav_expander').click(); 
+    // opens all parent categories
     $('.curr_cat').parents('.cat-item').children('.nav_expander').click(); 
 }
 
