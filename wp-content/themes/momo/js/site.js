@@ -82,6 +82,8 @@ function initNavExpand() {
         //$(this).data('tognum', num++); 
         $(this).data('tognum', num); 
     }); 
+    // open the current category: 
+    $('.curr_cat').parents('.cat-item').children('.nav_expander').click(); 
 }
 
 function initChosenSearch() {

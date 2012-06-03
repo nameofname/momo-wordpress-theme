@@ -17,7 +17,6 @@ function get_sidebar_cat_links() {
     // solve the problem of nesting an array in 1 iteration from a flat array by passing the array references to itself. 
     $cats_nested = array(); 
     foreach ($cats_flat as $cat) {
-        //echo '<pre>' ;var_dump(empty($cats_nested[$cat->cat_ID])); exit; 
         if (empty($cats_nested[$cat->cat_ID])) {
             $cats_nested[$cat->cat_ID] = array(); 
         }
@@ -36,10 +35,11 @@ function get_sidebar_cat_links() {
     // at this point, you have an assoc array with nested internal pointers to to itself.  
     // to clean up, grab only the top level reference, which is stored under $cats_nested[0]
     $cats_nested = $cats_nested[0]; 
-    //echo '<script type="text/javascript">var shit = '; echo(json_encode($cats_nested)); echo '</script>'; 
-
+    // get the current category and pass into recursion (lookup only get performed 1X) 
+    $catsy = get_the_category();
+    $this_cat = $catsy[0]->cat_ID;
     // generate nested <ul> navigation, based on $cat_arr starting at $fitst_id
-    $output = momo_get_nested_nav($cats_nested, TRUE); 
+    $output = momo_get_nested_nav($cats_nested, TRUE, $this_cat); 
 
     return $output; 
 }
@@ -47,23 +47,24 @@ function get_sidebar_cat_links() {
 // does recursion to generate navigation from $cats_nested
 /*
  */
-function momo_get_nested_nav(&$cats, $top_level = FALSE) {
-    // start ul: 
+function momo_get_nested_nav(&$cats, $top_level = FALSE, $this_cat = 0) {
+    // start ul: $top_level should only be FALSE on the first pass 
     $out = $top_level ? "<ul>" : "<ul class='children'>";
-    //echo '<pre>hey there '; var_dump(($cat['parent'] ));  
 
     foreach ($cats['children'] as $id => $cat) {
-        $link = get_category_link($id); 
+        //$link = get_category_link($id); 
+        $link = '/?cat=' . $id; 
         $name = $cat['name']; 
-        $curr_cat = is_category($id) ? ' curr_cat' : ''; 
+        //$curr_cat = is_category($id) ? ' curr_cat' : ''; 
+        $curr_cat = ($this_cat == $id) ? ' curr_cat' : ''; 
         $out .= "<li class='cat-item$curr_cat'><a href='$link'>$name</a>"; 
-        // if the current $cat 
+        // if the current $cat has children, recursively fetch associated <ul> 
         if (sizeof($cat['children']) > 0){
-            $out .= momo_get_nested_nav($cat, FALSE); 
+            $out .= momo_get_nested_nav($cat, FALSE, $this_cat); 
         }
         $out .= "</li>"; 
     } 
-    
+
     // end ul: 
     $out .= '</ul>';
     return $out; 
@@ -91,6 +92,7 @@ function get_sidebar_page_links() {
     return $output; 
 }
 ?>
+
 <div id="secondary" class="widget-area" role="complementary">
 
                 <aside id="categories" class="widget">
