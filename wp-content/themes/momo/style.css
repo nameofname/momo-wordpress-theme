@@ -667,11 +667,19 @@ article {
     text-indent: 0px; 
 }
 
-.cat-item.current-cat a {
+.cat-item.curr_cat a {
     color: #CC0033; 
 }
 
-.cat-item.current-cat .children {
+.cat-item.curr_cat ul a {
+    color: #4C4C4C; 
+}
+
+/*ul .cat-item.curr_cat_archive a {
+    color: #CC0033; 
+}*/
+
+.cat-item.curr_cat .children {
     font-weight: normal; 
 }
 
