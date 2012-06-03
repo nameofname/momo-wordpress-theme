@@ -1,7 +1,7 @@
 $(document).ready(function(){
     initCommentsInteractions(); 
     initToggleNavSearch(); 
-    initNavExpand(); 
+    initNavInteractions(); 
     initChosenSearch(); 
 
 // End document.ready functions
@@ -63,7 +63,9 @@ function initCommentsInteractions() {
 }
 
 // Collapse and expand sub categories in the main navigation. 
-function initNavExpand() {
+// Open the current category
+// When the user clicks a top level category, look for the "Ideas" link and go there (if it exists) 
+function initNavInteractions() {
     $('.cat-item').each(function(key, val){
         if ($(this).children('.children').length > 0) {
             var expander = $('<div>').attr('class','nav_expander nav_collapsed').data('tognum' , 0); 
@@ -86,6 +88,17 @@ function initNavExpand() {
     $('.curr_cat').children('.nav_expander').click(); 
     // opens all parent categories
     $('.curr_cat').parents('.cat-item').children('.nav_expander').click(); 
+    // when the user clicks a top level nav link - go to it's "Ideas" sub-category
+    $('.top-level').children('a').on('click', function(e){
+        $(this).closest('.top-level').find('a').each(function(key, val){
+            if ($(val).text().toLowerCase() == 'ideas'){
+                e.preventDefault(); 
+                var href = $(this).attr('href'); 
+                console.log('i want to go to there'); 
+                window.location = href; 
+            }
+        });
+    }); 
 }
 
 function initChosenSearch() {
@@ -97,20 +110,6 @@ function initChosenSearch() {
     $('#category_search_chzn').css({'width': '44%'}); 
     $('#category_search_chzn .chzn-drop').css({'width': '168px'}); 
     $('#category_search_chzn input').css({'width': '84%'}); 
-}
-
-
-
-
-
-//how would you do this in JS??? 
-
-function recur(arr){
-    for (i in arr) {
-        if (!arr[i]['used']) {
-            // do recur. 
-        }
-    }
 }
 
 

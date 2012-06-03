@@ -59,6 +59,7 @@ function get_sidebar_cat_links() {
  * @param $current_cat <int> = the current category - to be marked with the class name .curr_cat
  * @param $first_pass <bool> = boolean value indicating that this is the first loop (top level 
  *      categories only.
+ * @param $archive_link <array> = optional array describing the archive link for top level cats
  */
 function momo_get_nested_nav(&$cats, $top_level = FALSE, $current_cat = 0, $first_pass = FALSE, $archive_link = NULL) {
     // start ul: $top_level should only be FALSE on the first pass 
@@ -76,8 +77,9 @@ function momo_get_nested_nav(&$cats, $top_level = FALSE, $current_cat = 0, $firs
         $link = '/?cat=' . $id; 
         $name = $cat['name']; 
         $curr_cat = ($current_cat == $id && !$top_level) ? ' curr_cat' : ''; 
+        $top_level_class = $top_level ? ' top-level' : ''; 
         //$link = get_category_link($id); 
-        $out .= "<li class='cat-item$curr_cat'><a href='$link'>$name</a>"; 
+        $out .= "<li class='cat-item$curr_cat$top_level_class'><a href='$link'>$name</a>"; 
         // if the current $cat has children, recursively generate associated <ul> 
         if (sizeof($cat['children']) > 0){
             if ($first_pass_on) {
