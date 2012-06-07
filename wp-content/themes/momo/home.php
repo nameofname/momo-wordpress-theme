@@ -15,8 +15,10 @@ get_header(); ?>
 		<div id="primary-journaled">
             <?php
                 $path = get_option('momo_hero_banner'); 
-                if (getimagesize($path)) {
-                    echo "<img id='momo_hero_banner' src='$path' alt='' />"; 
+                if ($path) {
+                    if (getimagesize($path)) {
+                        echo "<img id='momo_hero_banner' src='$path' alt='' />"; 
+                    }
                 }
             ?>
 

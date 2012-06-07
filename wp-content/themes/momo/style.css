@@ -91,6 +91,7 @@ li {
 #primary-journaled {
     width: 740px;
     float: left; 
+    padding-top: 2px; 
 }
 
 #primary.single .entry-content {
